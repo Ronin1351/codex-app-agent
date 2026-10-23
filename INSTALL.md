@@ -57,7 +57,7 @@ Open the target project in Codex and invoke or request `codex-app-agent`. Start 
 - `prompts/release-and-deployment.md`
 - `prompts/end-of-day.md`
 
-If the user includes `$i-have-adhd`, the agent uses the focused interaction mode documented in the skill.
+The Start-of-Day prompt automatically uses the `$i-have-adhd` focused interaction mode. Other workflows use it when the user includes the modifier.
 
 ## Updating
 
