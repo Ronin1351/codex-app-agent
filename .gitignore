@@ -1,0 +1,4 @@
+.codex-app-agent/
+.env
+.env.*
+!.env.example

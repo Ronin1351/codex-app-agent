@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex App Agent"
+  short_description: "Coordinate app work across skills, gates, and evidence"
+  default_prompt: "Use $codex-app-agent to select the right development workflow, preserve unrelated changes, and verify completion with evidence."
