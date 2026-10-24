@@ -1,0 +1,16 @@
+{
+  "baseBranch": "main",
+  "productionEnvironment": "Production",
+  "ci": ["npx tsc --noEmit", "npm test", "npm run build"],
+  "handoffDir": "docs/handoffs",
+  "sessionFile": ".claude/agent-session.md",
+  "ignore": ["graphify-out/", ".claude/"],
+  "extraRules": [
+    {
+      "id": "edge-functions",
+      "label": "Supabase Edge Functions",
+      "pattern": "^supabase/functions/",
+      "checks": ["Deployed by the owner per environment; secrets set with the platform's secret store"]
+    }
+  ]
+}

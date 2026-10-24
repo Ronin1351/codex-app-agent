@@ -46,4 +46,4 @@ The package may inspect repositories and run local verification, but it must ask
 
 ## Claude and other agents
 
-The portable references and prompts are platform-neutral. Platform-specific adapters may be added under `adapters/` in future releases. Keep shared operating rules in `references/` and keep tool-specific invocation syntax in the platform adapter or skill entrypoint.
+The portable references and prompts are platform-neutral. Claude Code has its own adapter in [`adapters/claude/`](adapters/claude/README.md): an `app-agent` skill, an `app-agent-verifier` subagent, a read-only helper, and installers. Keep shared operating rules in `references/` and keep tool-specific invocation syntax in the platform adapter or skill entrypoint.
