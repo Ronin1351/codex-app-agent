@@ -3,9 +3,10 @@
 //   node <skill>/scripts/app-agent.mjs capabilities   plugins, skills, CLIs, project config
 //   node <skill>/scripts/app-agent.mjs risk [base]    changed files -> required checks (+ CI commands)
 //   node <skill>/scripts/app-agent.mjs deploy         latest production deployment vs the base branch
+//   node <skill>/scripts/app-agent.mjs focus          path of the i-have-adhd ruleset, if installed
 // Project config: .claude/app-agent.json (or APP_AGENT_CONFIG=<path>). See templates/app-agent.json.
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 
@@ -89,6 +90,29 @@ function capabilities() {
   console.log(`Base branch: ${baseBranch}${baseExists(baseBranch) ? "" : "  (origin/" + baseBranch + " NOT FOUND: set baseBranch)"}   CI: ${ciCommands().join(" && ") || "(none found)"}`);
 }
 
+// ---------- focus ----------
+// Finds the i-have-adhd ruleset (Claude or Codex plugin cache, or a plain skills folder), newest copy first.
+function findFocusRules() {
+  const home = homedir();
+  const found = [];
+  for (const cache of [path.join(home, ".claude", "plugins", "cache"), path.join(process.env.CODEX_HOME || path.join(home, ".codex"), "plugins", "cache")]) {
+    if (!existsSync(cache)) continue;
+    for (const market of readdirSync(cache)) {
+      const pdir = path.join(cache, market, "i-have-adhd");
+      if (!existsSync(pdir)) continue;
+      for (const ver of readdirSync(pdir)) found.push(path.join(pdir, ver, "skills", "i-have-adhd", "SKILL.md"));
+    }
+  }
+  for (const d of [path.join(home, ".claude", "skills"), path.join(home, ".codex", "skills"), path.join(home, ".agents", "skills")])
+    found.push(path.join(d, "i-have-adhd", "SKILL.md"));
+  return found.filter(existsSync).sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0] || null;
+}
+function focus() {
+  const f = findFocusRules();
+  console.log(f ? `Focus ruleset: ${f}\nRead it and follow it for the rest of the session, until the user says "stop adhd mode" or "normal mode".`
+                : "Focus ruleset not installed; use the short focus rules in SKILL.md.");
+}
+
 // ---------- risk ----------
 function risk(baseArg) {
   if (!baseArg) {
@@ -142,4 +166,4 @@ function deploy() {
 }
 
 const [cmd, arg] = process.argv.slice(2);
-({ capabilities, risk, deploy }[cmd] || (() => console.log("usage: app-agent.mjs capabilities | risk [base] | deploy")))(arg);
+({ capabilities, risk, deploy, focus }[cmd] || (() => console.log("usage: app-agent.mjs capabilities | risk [base] | deploy | focus")))(arg);

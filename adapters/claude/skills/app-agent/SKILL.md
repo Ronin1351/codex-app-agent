@@ -38,4 +38,4 @@ A yes covers the one action asked about. The next action of the same kind needs 
 
 ## Focus mode
 
-When the user writes `$i-have-adhd` or has turned on `/i-have-adhd`: lead with the single next action, offer at most three choices, use Now / Next / Later, checkpoint after each step, and keep an open-loop list. Gates and the completion contract stay the same.
+**Start of day turns it on automatically.** So does `$i-have-adhd` in any request, or `/i-have-adhd` turned on by the user. To turn it on, run `<helper> focus`, read the ruleset file it prints, and follow that file for the rest of the session, until the user says "stop adhd mode" or "normal mode". If no ruleset is installed, use the short rules instead: lead with the single next action, offer at most three choices, use Now / Next / Later, checkpoint after each step, and keep an open-loop list. Gates and the completion contract stay the same either way.

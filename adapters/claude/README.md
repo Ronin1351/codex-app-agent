@@ -6,7 +6,7 @@ The Claude Code adapter for this package. It runs the same operating model as th
 |---|---|---|
 | Skill `app-agent` | `~/.claude/skills/app-agent/` | Picks the mode, routes to skills, runs the gates, writes the completion report. Invoke with `/app-agent`. |
 | Subagent `app-agent-verifier` | `~/.claude/agents/app-agent-verifier.md` | Read-only "is it done?" pass in its own context: risk checks, CI, a defect review, and a verdict. |
-| Helper `app-agent.mjs` | inside the skill, `scripts/` | Read-only Node script: `capabilities`, `risk`, `deploy`. No dependencies. |
+| Helper `app-agent.mjs` | inside the skill, `scripts/` | Read-only Node script: `capabilities`, `risk`, `deploy`, `focus`. No dependencies. |
 | Project config | `<project>/.claude/app-agent.json` | The project's base branch, CI commands, handoff folder and extra risk rules. Optional. |
 
 ## Requirements
@@ -67,7 +67,7 @@ Then start a new Claude Code session so it picks up the new skill and subagent. 
 | `/app-agent weekly` | Read-only health pass written to a report. |
 | "use the app-agent-verifier" | A separate-context check of whether the current change is really done. |
 
-Add `$i-have-adhd` to any request, or turn on `/i-have-adhd`, for one-next-action replies with Now / Next / Later.
+**Focus mode (i-have-adhd) turns on automatically at start of day.** The agent finds the installed `i-have-adhd` ruleset with `app-agent.mjs focus`, reads it, and follows it for the rest of the session, until you say "stop adhd mode". Add `$i-have-adhd` to any other request to turn it on there too. Without the plugin installed, the agent uses a short built-in version. To have it on in *every* session, not just at start of day, use the plugin's own switch: `touch ~/.claude/.i-have-adhd-always`.
 
 ## What it will and won't do on its own
 

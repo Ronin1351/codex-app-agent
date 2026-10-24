@@ -3,6 +3,7 @@
 Each mode ends on its **Done when** line. `<helper>` is `node <base>/scripts/app-agent.mjs` (see SKILL.md); "CI" means the commands `<helper> capabilities` prints. Paths such as `handoffDir` come from the project config (`.claude/app-agent.json`).
 
 ## Start of day (read-only; focus mode on)
+0. Turn focus mode on before writing anything to the user: `<helper> focus`, then read the ruleset it prints (SKILL.md → Focus mode). It stays on after start of day ends.
 1. `git status`, the branch, ahead/behind the base branch (fetch only), and open PRs (`gh pr list --author @me`).
 2. `<helper> deploy` (or the Vercel connector), and `<helper> capabilities`.
 3. Read the newest handoff in `handoffDir` and the session file.
