@@ -17,6 +17,12 @@ New-Item -ItemType Directory -Path $skillDest -Force | Out-Null
 Copy-Item -Path (Join-Path $adapter 'skills\app-agent\*') -Destination $skillDest -Recurse -Force
 Write-Host "Installed skill:    $skillDest"
 
+# Shared skill: single source in skills\execution-checklist (agents\ is Codex-only metadata).
+$checklistDest = Join-Path $root 'skills\execution-checklist'
+New-Item -ItemType Directory -Path $checklistDest -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path (Split-Path -Parent (Split-Path -Parent $adapter)) 'skills\execution-checklist\SKILL.md') -Destination $checklistDest -Force
+Write-Host "Installed skill:    $checklistDest"
+
 $agentDest = Join-Path $root 'agents'
 New-Item -ItemType Directory -Path $agentDest -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $adapter 'agents\app-agent-verifier.md') -Destination $agentDest -Force

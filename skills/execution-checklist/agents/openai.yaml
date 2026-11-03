@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execution Checklist"
+  short_description: "Compile or audit evidence-gated execution checklists"
+  default_prompt: "Use $execution-checklist to compile this task brief into an execution checklist, evidence ledger and decision register, or to audit an existing checklist."

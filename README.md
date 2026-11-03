@@ -23,7 +23,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
    ```bash
    ./scripts/install.sh --all --project=/path/to/your/app
    ```
-   This adds the `codex-app-agent` skill to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
+   This adds the `codex-app-agent` and `execution-checklist` skills to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
 2. **Tell the project about it.** Copy `.codex-app-agent/AGENTS.md.template` into your app's `AGENTS.md` (merge it if you already have one), and add your project's own rules there: how data is accessed, how releases happen, what must never be done.
 3. **Open Codex in your app and type one of these:**
 
@@ -37,6 +37,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 
    The full text of each workflow is in `.codex-app-agent/prompts/`. If Codex says it can't find a prompt or reference, tell it they are in `.codex-app-agent/` in your project.
 4. **Focus mode anywhere else:** add `$i-have-adhd` to any request.
+5. **Task checklists:** `Use $execution-checklist: compile <task brief>` builds an evidence-gated execution checklist; `Use $execution-checklist: audit <checklist>` audits one. In Claude Code the same skill is installed by the adapter and called as `/execution-checklist`.
 
 ### Claude Code
 
