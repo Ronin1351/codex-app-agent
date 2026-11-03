@@ -25,6 +25,10 @@ mkdir -p "$ROOT/skills/app-agent" "$ROOT/agents"
 cp -R "$ADAPTER/skills/app-agent/." "$ROOT/skills/app-agent/"
 cp "$ADAPTER/agents/app-agent-verifier.md" "$ROOT/agents/"
 echo "Installed skill:    $ROOT/skills/app-agent"
+# Shared skill: single source in skills/execution-checklist (agents/ is Codex-only metadata).
+mkdir -p "$ROOT/skills/execution-checklist"
+cp "$ADAPTER/../../skills/execution-checklist/SKILL.md" "$ROOT/skills/execution-checklist/"
+echo "Installed skill:    $ROOT/skills/execution-checklist"
 echo "Installed subagent: $ROOT/agents/app-agent-verifier.md"
 
 if $TEMPLATES; then

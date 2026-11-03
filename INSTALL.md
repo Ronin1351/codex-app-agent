@@ -22,7 +22,7 @@ The installer does not install application dependencies, access hosted services,
 
 Choose one option:
 
-1. **Codex skill** — installs `codex-app-agent` under `$CODEX_HOME/skills`.
+1. **Codex skills** — installs `codex-app-agent` and `execution-checklist` under `$CODEX_HOME/skills`.
 2. **Project references** — copies prompts, registry, matrix, and templates under `.codex-app-agent` in the current project.
 3. **Both** — performs both operations.
 
@@ -67,7 +67,7 @@ Pull a new version, inspect the diff, then rerun the same installer command. The
 
 Removal is deliberately manual so the target is visible. Delete only the exact installed directories:
 
-- user skill: `$CODEX_HOME/skills/codex-app-agent`
+- user skills: `$CODEX_HOME/skills/codex-app-agent` and `$CODEX_HOME/skills/execution-checklist`
 - project bundle: `<project>/.codex-app-agent`
 
 The package does not remove files automatically.

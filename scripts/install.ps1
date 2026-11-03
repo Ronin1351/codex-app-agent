@@ -10,6 +10,8 @@ $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
 $skillSource = Join-Path $repo 'skills\codex-app-agent'
 $skillDestination = Join-Path $CodexHome 'skills\codex-app-agent'
+$checklistSource = Join-Path $repo 'skills\execution-checklist'
+$checklistDestination = Join-Path $CodexHome 'skills\execution-checklist'
 $referenceSource = Join-Path $repo 'references'
 $promptSource = Join-Path $repo 'prompts'
 
@@ -22,6 +24,9 @@ function Install-Skill {
   New-Item -ItemType Directory -Path $skillDestination -Force | Out-Null
   Copy-Item -Path (Join-Path $skillSource '*') -Destination $skillDestination -Recurse -Force
   Write-Host "Installed skill: $skillDestination"
+  New-Item -ItemType Directory -Path $checklistDestination -Force | Out-Null
+  Copy-Item -Path (Join-Path $checklistSource '*') -Destination $checklistDestination -Recurse -Force
+  Write-Host "Installed skill: $checklistDestination"
 }
 
 function Install-ProjectBundle {

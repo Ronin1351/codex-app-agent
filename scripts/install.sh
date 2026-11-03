@@ -16,12 +16,15 @@ done
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 SKILL_DEST="$CODEX_HOME/skills/codex-app-agent"
+CHECKLIST_DEST="$CODEX_HOME/skills/execution-checklist"
 PROJECT_DEST="$PROJECT_PATH/.codex-app-agent"
 
 install_skill() {
-  mkdir -p "$SKILL_DEST"
+  mkdir -p "$SKILL_DEST" "$CHECKLIST_DEST"
   cp -R "$REPO/skills/codex-app-agent/." "$SKILL_DEST/"
+  cp -R "$REPO/skills/execution-checklist/." "$CHECKLIST_DEST/"
   echo "Installed skill: $SKILL_DEST"
+  echo "Installed skill: $CHECKLIST_DEST"
 }
 
 install_project() {
