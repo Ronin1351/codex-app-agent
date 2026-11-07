@@ -20,7 +20,7 @@ This matrix is the routing layer for the verified Codex skill registry. Select o
 | Test failure | `superpowers:systematic-debugging` | `mattpocock-skills:diagnosing-bugs`, `superpowers:test-driven-development`, `build-web-apps:frontend-testing-debugging` | Do not mask or loosen the test before root-cause analysis | Reproduction, root cause, fixed test, rerun |
 | Deployment | `vercel:deployments-cicd` or `vercel:vercel-cli` | `vercel:env-vars`, `vercel:verification`, `superpowers:verification-before-completion` | Confirm target/environment and rollback path | Deployment logs, smoke test, health check |
 | Production incident | `vercel:vercel-agent` or `mattpocock-skills:diagnosing-bugs` | `vercel:cdn-caching`, `vercel:vercel-firewall`, `codex-security:validation` | Stabilize first; changes with external impact require approval | Timeline, mitigation evidence, regression/monitoring check |
-| Documentation | `mattpocock-skills:writing-for-agents` | `mattpocock-skills:research`, `pages:write-page`, `openai-docs` when Codex/OpenAI-specific | Keep one source of truth; cite current sources | Link/path checks and stale-reference review |
+| Documentation | `mattpocock-skills:writing-for-agents` for agent-facing docs; `doc-coauthoring` for specs, proposals and decision docs people read | `mattpocock-skills:research`, `pages:write-page`, `openai-docs` when Codex/OpenAI-specific | Keep one source of truth; cite current sources | Link/path checks, stale-reference review, and a fresh-reader test for `doc-coauthoring` docs |
 | Release preparation | `superpowers:finishing-a-development-branch` | `mattpocock-skills:code-review`, `codex-security:security-diff-scan`, `vercel:verification` | No merge/push/release without explicit authorization | Full verification checklist and release notes |
 | Handoff | `mattpocock-skills:handoff` | `graphify`, `mattpocock-skills:writing-for-agents`, `superpowers:verification-before-completion` | State what is known, unknown, and unverified | Reproducible commands and exact remaining work |
 
@@ -52,7 +52,7 @@ Every verified catalog skill is assigned to at least one lifecycle category belo
 
 ### documentation/productivity
 
-`documents:documents`, `pages:maintain-space`, `pages:manage-schedules`, `pages:organize-space`, `pages:write-page`, `pdf:pdf`, `plugin-management:plugin-management`, `presentations:presentations`, `spreadsheets:excel-live-control`, `spreadsheets:spreadsheets`, `template-creator:template-creator`
+`doc-coauthoring`, `documents:documents`, `pages:maintain-space`, `pages:manage-schedules`, `pages:organize-space`, `pages:write-page`, `pdf:pdf`, `plugin-management:plugin-management`, `presentations:presentations`, `spreadsheets:excel-live-control`, `spreadsheets:spreadsheets`, `template-creator:template-creator`
 
 ### frontend/UI
 

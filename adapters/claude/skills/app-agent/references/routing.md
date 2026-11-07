@@ -24,11 +24,14 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 | Security on a diff | built-in `/security-review` | `/code-review` focused on the `risk` security checks; report "security review not run" |
 | Database: inspect, advisors | Supabase connector (`list_tables`, `get_advisors`, read-only `execute_sql`) | The project's own read-only connection or CLI |
 | Database: change schema | Migration file plus a local test; the owner applies it | — |
+| Database: PlanetScale (MySQL/Vitess/Postgres) | `planetscale` plugin (MCP reads, `planetscale:*` safety reviews, `postgres`, `mysql`, `vitess`) | `pscale` CLI, read-only |
+| Write a doc: spec, proposal, decision doc, RFC | `doc-coauthoring` (context → sections → reader test) | `docs/specs/<name>.md` drafted section by section |
 | Deploy status, logs, runtime errors | Vercel connector (`list_deployments`, `get_deployment_build_logs`, `get_runtime_errors`) | `<helper> deploy` (GitHub deployments API), `gh run list` |
 | Steps only the owner can do | `mattpocock-skills:wizard` | A numbered checklist with exact commands |
 | PR body | `mattpocock-skills:pr` | — |
 | End a session | `mattpocock-skills:handoff`, then copy it to the project's handoff folder | Write the handoff by hand (sections in `modes.md`) |
 | Unsure which skill | `mattpocock-skills:ask-matt` | This table |
+| A `/spartan:*` command asked for by name | `ai-toolkit` plugin (Spartan AI Toolkit) | The matching row above |
 | Code map, blast radius | `graphify` | `git grep`, plus reading imports |
 
 ## Connector rules
@@ -36,9 +39,12 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 - **Supabase connector**: reads are open. `apply_migration`, a writing `execute_sql`, branch merge/reset, and project pause/restore are approval-gated. Iterate on schema only against a local database.
 - **Vercel connector**: reads are open. Deploy, promote, rollback, env edits, firewall changes, domain changes and project updates are approval-gated.
 - **GitHub (`gh`)**: reads are open. Push, PR create/merge, comments and releases are approval-gated.
+- **PlanetScale connector**: reads, Insights and recommendations are open. Deploy requests, branch changes, schema changes, Traffic Control rules, webhooks and credentials are approval-gated.
 
 ## Notes on specific skills
 
 - `mattpocock-skills:handoff` saves to the OS temp folder by design. Copy the file into the project's handoff folder (`handoffDir` in the project config) when the project keeps handoffs.
 - `/i-have-adhd` is user-invoked only. The agent follows the focus-mode rules in SKILL.md when the user asks for it.
+- **Spartan AI Toolkit** (`ai-toolkit`) overlaps the spec/plan/build/review rows above. Those rows stay primary; run a `/spartan:*` command only when the user names it, and never two workflow systems on the same task.
+- `doc-coauthoring` is for documents people will read. Code-adjacent agent docs (`AGENTS.md`, `CLAUDE.md`, skills) still follow `mattpocock-skills:writing-for-agents`.
 - `/code-review` and `/security-review` review the current diff. Run them after `<helper> risk`, so the review knows which areas carry risk.

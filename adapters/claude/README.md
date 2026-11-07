@@ -8,6 +8,8 @@ The Claude Code adapter for this package. It runs the same operating model as th
 | Subagent `app-agent-verifier` | `~/.claude/agents/app-agent-verifier.md` | Read-only "is it done?" pass in its own context: risk checks, CI, a defect review, and a verdict. |
 | Helper `app-agent.mjs` | inside the skill, `scripts/` | Read-only Node script: `capabilities`, `risk`, `deploy`, `focus`. No dependencies. |
 | Project config | `<project>/.claude/app-agent.json` | The project's base branch, CI commands, handoff folder and extra risk rules. Optional. |
+| Skills `execution-checklist`, `doc-coauthoring` | `~/.claude/skills/` | Shared with the Codex package: evidence-gated checklists, and three-stage document co-authoring (`/doc-coauthoring`). |
+| Plugins (with `--plugins`) | Claude Code plugin store | Spartan AI Toolkit (`/spartan:*`) and PlanetScale (MCP + database skills), from [`plugins/plugins.json`](../../plugins/plugins.json). |
 
 ## Requirements
 
@@ -22,18 +24,20 @@ Nothing is required beyond git and Node. Every missing piece has a fallback, and
 From a clone of this repository:
 
 ```powershell
-./adapters/claude/install.ps1                                         # for you, in ~/.claude
+./adapters/claude/install.ps1 -Plugins                                # for you, in ~/.claude, plus the bundled plugins
+./adapters/claude/install.ps1                                         # for you, skills only (no network)
 ./adapters/claude/install.ps1 -Project -ProjectPath C:\path\to\app    # for the team, in <app>/.claude (commit it)
 ./adapters/claude/install.ps1 -Templates -ProjectPath C:\path\to\app  # also add app-agent.json and a CLAUDE.md template
 ```
 
 ```bash
+./adapters/claude/install.sh --plugins
 ./adapters/claude/install.sh
 ./adapters/claude/install.sh --project --path=/path/to/app
 ./adapters/claude/install.sh --templates --path=/path/to/app
 ```
 
-Then start a new Claude Code session so it picks up the new skill and subagent. The installers only copy files. They never overwrite an existing `app-agent.json`, and they never touch your `CLAUDE.md`.
+Then start a new Claude Code session so it picks up the new skills, subagent and plugins. The installers only copy files, except `--plugins`, which runs `claude plugin marketplace add` and `claude plugin install` for each plugin (at project scope with `--project`). Without the `claude` CLI on your PATH, it prints the `/plugin` commands to paste into Claude Code instead. They never overwrite an existing `app-agent.json`, and they never touch your `CLAUDE.md`.
 
 **User or project install?** Use a user install to try it out or for solo work. A project install (committed under `.claude/`) gives everyone on the repo the same agent and version.
 

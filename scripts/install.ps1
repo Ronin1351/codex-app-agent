@@ -12,6 +12,8 @@ $skillSource = Join-Path $repo 'skills\codex-app-agent'
 $skillDestination = Join-Path $CodexHome 'skills\codex-app-agent'
 $checklistSource = Join-Path $repo 'skills\execution-checklist'
 $checklistDestination = Join-Path $CodexHome 'skills\execution-checklist'
+$docSource = Join-Path $repo 'skills\doc-coauthoring'
+$docDestination = Join-Path $CodexHome 'skills\doc-coauthoring'
 $referenceSource = Join-Path $repo 'references'
 $promptSource = Join-Path $repo 'prompts'
 
@@ -27,6 +29,10 @@ function Install-Skill {
   New-Item -ItemType Directory -Path $checklistDestination -Force | Out-Null
   Copy-Item -Path (Join-Path $checklistSource '*') -Destination $checklistDestination -Recurse -Force
   Write-Host "Installed skill: $checklistDestination"
+  New-Item -ItemType Directory -Path $docDestination -Force | Out-Null
+  Copy-Item -Path (Join-Path $docSource '*') -Destination $docDestination -Recurse -Force
+  Write-Host "Installed skill: $docDestination"
+  Write-Host 'Note: the bundled Claude Code plugins (plugins\plugins.json) install with adapters\claude\install.ps1 -Plugins.'
 }
 
 function Install-ProjectBundle {
