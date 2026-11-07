@@ -76,6 +76,8 @@ function capabilities() {
     ["i-have-adhd", "/i-have-adhd output mode (user-invoked)"],
     ["intent", "UX evaluation (intent:evaluate) for flow critiques"],
     ["andrej-karpathy-skills", "coding-behavior guidelines"],
+    ["ai-toolkit", "Spartan AI Toolkit: /spartan:* commands (bundled, --plugins)"],
+    ["planetscale", "PlanetScale MCP + database safety skills (bundled, --plugins)"],
   ];
   console.log("Plugins (enabledPlugins):");
   for (const [p, use] of watch) console.log(`  ${on.includes(p) ? "ON " : "off"}  ${p.padEnd(24)} ${use}`);

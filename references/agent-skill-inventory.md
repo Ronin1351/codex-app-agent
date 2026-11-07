@@ -1,6 +1,6 @@
 # Agent Skill Inventory
 
-Verified catalog skills: 112
+Verified catalog skills: 113
 
 Each entry below was read in full and recorded with its source hash. Extracted evidence is intentionally concise; the source skill remains authoritative.
 
@@ -276,6 +276,15 @@ Each entry below was read in full and recorded with its source hash. Extracted e
 - Verification evidence:
 - Artifacts mentioned: SKILL.md; ../../docs/guidance.md; ../../docs/api.md; ../../docs/confirmations.md
 - Lifecycle situations: during development
+
+## doc-coauthoring
+- Category: documentation/productivity
+- Purpose: Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.
+- Source: skills/doc-coauthoring/SKILL.md (packaged; upstream anthropics/skills, Apache-2.0)
+- Status: reviewed; lines=375; sha256=2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4
+- Triggers: Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.
+- Gates: When to Offer This Workflow
+- Verification evidence: Stage 3: Reader Testing; Final Review
 
 ## documents:documents
 - Category: documentation/productivity

@@ -2,7 +2,7 @@
 
 Generated: 2026-10-24
 
-Catalog skills read: 112
+Catalog skills read: 113 (112 audited 2026-10-24; `doc-coauthoring` added 2026-11-07 as a packaged skill)
 
 - build-web-apps:frontend-app-builder
 - build-web-apps:frontend-testing-debugging
@@ -25,6 +25,7 @@ Catalog skills read: 112
 - codex-security:verify-fix
 - codex-security:vulnerability-writeup
 - computer-use:computer-use
+- doc-coauthoring
 - documents:documents
 - graphify
 - imagegen

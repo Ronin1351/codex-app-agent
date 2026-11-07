@@ -12,7 +12,19 @@ This guide is for a first-time user. The package has two supported modes:
 3. Decide whether you want a user-wide Codex skill, project-local references, or both.
 4. Review the files before running an installer if your organization requires review.
 
-The installer does not install application dependencies, access hosted services, modify secrets, deploy, commit, or push.
+The installer does not install application dependencies, access hosted services, modify secrets, deploy, commit, or push. The one network step in the package is opt-in: the Claude adapter's `--plugins` / `-Plugins` switch installs the Claude Code plugins listed in `plugins/plugins.json` (Spartan AI Toolkit, PlanetScale) through the `claude` CLI.
+
+## Claude Code
+
+```powershell
+./adapters/claude/install.ps1 -Plugins
+```
+
+```bash
+./adapters/claude/install.sh --plugins
+```
+
+Installs the `app-agent`, `execution-checklist` and `doc-coauthoring` skills and the `app-agent-verifier` subagent into `~/.claude`, then the bundled plugins at user scope. Add `--project --path=<app>` (`-Project -ProjectPath <app>`) to install into the app's `.claude/` and the plugins at project scope instead.
 
 ## Windows: guided installation
 
@@ -22,7 +34,7 @@ The installer does not install application dependencies, access hosted services,
 
 Choose one option:
 
-1. **Codex skills** — installs `codex-app-agent` and `execution-checklist` under `$CODEX_HOME/skills`.
+1. **Codex skills** — installs `codex-app-agent`, `execution-checklist` and `doc-coauthoring` under `$CODEX_HOME/skills`.
 2. **Project references** — copies prompts, registry, matrix, and templates under `.codex-app-agent` in the current project.
 3. **Both** — performs both operations.
 
@@ -67,7 +79,9 @@ Pull a new version, inspect the diff, then rerun the same installer command. The
 
 Removal is deliberately manual so the target is visible. Delete only the exact installed directories:
 
-- user skills: `$CODEX_HOME/skills/codex-app-agent` and `$CODEX_HOME/skills/execution-checklist`
+- user skills: `$CODEX_HOME/skills/codex-app-agent`, `$CODEX_HOME/skills/execution-checklist` and `$CODEX_HOME/skills/doc-coauthoring`
+- Claude Code skills: `~/.claude/skills/app-agent`, `~/.claude/skills/execution-checklist`, `~/.claude/skills/doc-coauthoring`, and `~/.claude/agents/app-agent-verifier.md`
+- Claude Code plugins: `claude plugin uninstall ai-toolkit@spartan-marketplace` and `claude plugin uninstall planetscale@planetscale`
 - project bundle: `<project>/.codex-app-agent`
 
 The package does not remove files automatically.

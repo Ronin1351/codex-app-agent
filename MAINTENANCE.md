@@ -11,6 +11,10 @@
 7. Review the diff for absolute paths, secrets, project-specific names, and duplicated rules.
 8. Commit and tag the release.
 
+## Bundled plugins
+
+Claude Code plugins are not vendored. Add or update an entry in `plugins/plugins.json` (marketplace, `plugin@marketplace` id, license, the upstream commit and version you reviewed, purpose, notes), update the bundled table in `README.md` and the routing table in `adapters/claude/skills/app-agent/references/routing.md`, and add the plugin to the `capabilities` watch list in `app-agent.mjs`. Vendored skills (such as `doc-coauthoring`) keep their upstream commit and license in `THIRD_PARTY_NOTICES.md`.
+
 ## Platform adapters
 
 Keep reusable lifecycle rules in `references/` and `prompts/`. Add platform-specific invocation syntax under `adapters/` rather than duplicating the operating model. A future Claude adapter should translate the same gates and verification contract into Claude's project instructions, commands, and agent format.
@@ -21,6 +25,6 @@ Keep reusable lifecycle rules in `references/` and `prompts/`. Add platform-spec
 - Every registry `source_file` is portable and contains no local absolute path.
 - Every skill reference resolves from the installed location.
 - PowerShell and shell installers work in guided and complete modes.
-- No installer performs network, deployment, commit, push, secret, or hosted-data operations.
+- No installer performs network, deployment, commit, push, secret, or hosted-data operations, except the Claude adapter's opt-in `--plugins` / `-Plugins` switch (plugin install through the `claude` CLI).
 - Prompt completion claims require fresh evidence.
 - Changes are tagged with a semantic version.

@@ -1,0 +1,25 @@
+{
+  "$comment": "Claude Code plugins bundled with app-agent. Installed only by the Claude adapter's --plugins / -Plugins switch, which runs `claude plugin marketplace add <marketplace>` then `claude plugin install <plugin>`. Upstream commits are the versions reviewed when they were added; the install itself takes the marketplace's current version.",
+  "plugins": [
+    {
+      "name": "spartan-ai-toolkit",
+      "marketplace": "spartan-stratos/spartan-ai-toolkit",
+      "plugin": "ai-toolkit@spartan-marketplace",
+      "license": "MIT",
+      "reviewed_upstream_commit": "96b2c9d099f8507a95b9e43916f144594720a3c9",
+      "reviewed_version": "1.27.0",
+      "purpose": "Engineering workflow packs: /spartan:* commands, rules, skills and agents (spec, plan, build, pr-ready, product and frontend packs).",
+      "notes": "Overlaps the superpowers and mattpocock-skills workflows. app-agent routing keeps those as primary; use /spartan:* commands when asked for by name. Ships a session-start update check that runs git fetch on its own install."
+    },
+    {
+      "name": "planetscale",
+      "marketplace": "planetscale/claude-plugin",
+      "plugin": "planetscale@planetscale",
+      "license": "Apache-2.0",
+      "reviewed_upstream_commit": "95c80f9f391be9b1b6172bf82d4191e1ec11b637",
+      "reviewed_version": "1.1.1",
+      "purpose": "PlanetScale hosted MCP server (organizations, databases, branches, schema, Insights) plus MySQL, Postgres, Vitess and PlanetScale safety-review skills.",
+      "notes": "The MCP server signs in to your PlanetScale account on first use. Its database skills (postgres, mysql) are useful without a PlanetScale account."
+    }
+  ]
+}

@@ -1,29 +1,43 @@
 {
   "generated_at": "2026-10-23T23:06:06.1263355Z",
-  "catalog_skill_count": 112,
-  "reviewed_count": 112,
+  "catalog_skill_count": 113,
+  "reviewed_count": 113,
   "missing_count": 0,
   "unreadable_count": 0,
   "records": [
     {
-      "name": "vercel:access-protected-vercel-deployment",
+      "name": "build-web-apps:frontend-app-builder",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 170,
-      "content_sha256": "24d295fa893a22b318f19d87fc52865fc0e26fe43abea62ce787769d00a79fc6",
+      "line_count": 186,
+      "content_sha256": "9273de02827b29534be28fb2b37154c1571ac38b4e20d3ef5482b7e22af67394",
       "status": "reviewed"
     },
     {
-      "name": "vercel:ai-gateway",
+      "name": "build-web-apps:frontend-testing-debugging",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 294,
-      "content_sha256": "f3e5ad702d8eaafb07fb02db81b24d75added47dad1321c90b0f4996cccb41b6",
+      "line_count": 143,
+      "content_sha256": "03724620cf7e7de425b607a5492f572d867b1cf5d9c92c74bf50d057d7415e0b",
       "status": "reviewed"
     },
     {
-      "name": "vercel:ai-sdk",
+      "name": "build-web-apps:react-best-practices",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 388,
-      "content_sha256": "9d6dd182e5e61afc94f7d3867012cfdc19ebbb634e4370e4ed7782919fc1038a",
+      "line_count": 143,
+      "content_sha256": "cc7d03309817f392c419a203e1bc1f1759ef94831f7dbedf39d91a35ac5bc86a",
+      "status": "reviewed"
+    },
+    {
+      "name": "build-web-apps:shadcn-best-practices",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 241,
+      "content_sha256": "7678f5168d4ee6f3ae3ce4d3d41c654f0aebc7b88cbc392a9504822dec0dff28",
+      "status": "reviewed"
+    },
+    {
+      "name": "build-web-apps:stripe-best-practices",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 28,
+      "content_sha256": "5062f0c980030af377a0ac33b77c9d233676e2ecbb57b3d3cd8734fc0da464b2",
       "status": "reviewed"
     },
     {
@@ -41,52 +55,129 @@
       "status": "reviewed"
     },
     {
-      "name": "product-design:audit",
+      "name": "codex-security:deep-security-scan",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 166,
-      "content_sha256": "087f798c3fe02e91b4cca18cc0f42c358a4dc2c02ccf37a348b476fb19b64aa3",
+      "line_count": 81,
+      "content_sha256": "d6aed0d9b47065a1384a96d0a45c843b0cda8ba48e3d2cbe96c65357c6e55ee3",
       "status": "reviewed"
     },
     {
-      "name": "vercel:auth",
+      "name": "codex-security:define-security-policy",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 669,
-      "content_sha256": "7a1ccb7beecef0959e224fef7de2bcf460e6f58c6685bd3359ec0e6103e063d4",
+      "line_count": 94,
+      "content_sha256": "2817e1a03980a7ebea478c8d9e6c622e3c6205123e767a1e32f0204c06729cc7",
       "status": "reviewed"
     },
     {
-      "name": "vercel:bootstrap",
+      "name": "codex-security:finding-discovery",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 234,
-      "content_sha256": "2306dbb1343c5acfdf7aedcc5f27751bd73570e2a615e71c873f15f339616d6b",
+      "line_count": 160,
+      "content_sha256": "14cc797e750ca4bdd8b060c4cf96d7d32f25b132aa8f80d0a0837683fe010790",
       "status": "reviewed"
     },
     {
-      "name": "superpowers:brainstorming",
+      "name": "codex-security:fix-finding",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 295,
-      "content_sha256": "61a7ef918652108c76a3fd01e02dd92d39996c6b46d4cb2819cbd03f6c45e46a",
+      "line_count": 99,
+      "content_sha256": "ba7311f43b2c0742da0d5c6bdb2f0b26601c09cc59747cf8c62a09f8d0bb86d2",
       "status": "reviewed"
     },
     {
-      "name": "vercel:build-agents",
+      "name": "codex-security:propose-security-hardening",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 174,
-      "content_sha256": "334a5f42b57d7536fae1971191dce34ad47487a17f21cab1cc6709d4119203fb",
+      "line_count": 243,
+      "content_sha256": "ad07d88da7c2bc9e551849cdde686b0daad380ed0aac798e6c06444681d75959",
       "status": "reviewed"
     },
     {
-      "name": "vercel:cdn-caching",
+      "name": "codex-security:security-diff-scan",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 292,
-      "content_sha256": "10f91d3abe3378046cffeb214871a9bceab3c3a1128015244f99e76fae283a3e",
+      "line_count": 40,
+      "content_sha256": "f85962d46f141227d794a25253a39232bc4e1ad756509ecd3d8769b85b735136",
       "status": "reviewed"
     },
     {
-      "name": "vercel:chat-sdk",
+      "name": "codex-security:security-scan",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 203,
-      "content_sha256": "65b932858227ff89784636bbdf42e3573397175405397644c37310700ee169b1",
+      "line_count": 43,
+      "content_sha256": "104e2f93fc965c34e91970f517a89e330d5b29dbb243dcea5d95d83f14d135cf",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:threat-model",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 21,
+      "content_sha256": "42568e50c787c4c0bfb9495ad67e72ab6c1a951bb910ecba2c67cff8961c4d56",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:track-findings",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 93,
+      "content_sha256": "a6d2f30e6d5ca7bd9d74d83017f2f5481c5829585941208a1673b82c683d292b",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:triage-finding",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 95,
+      "content_sha256": "83081950bd4b29ff37cf82d137aec164532ae56b03dbaad3f4dd1d5423e758a7",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:validation",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 112,
+      "content_sha256": "3c4660f79b12a92728e6bb25027064c3a911d0960d39aeafc8fda9e42ce517a5",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:verify-fix",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 49,
+      "content_sha256": "3d4530484c7e4c18b6afe7c6527247e96517dce1ebd1bda9d349cd367ecb0ae3",
+      "status": "reviewed"
+    },
+    {
+      "name": "codex-security:vulnerability-writeup",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 185,
+      "content_sha256": "d08582d9963ce3bfbc3fe81b6e85a01e6fe306713d7951bfd8dd2fbc3df75de4",
+      "status": "reviewed"
+    },
+    {
+      "name": "computer-use:computer-use",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 30,
+      "content_sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951",
+      "status": "reviewed"
+    },
+    {
+      "name": "doc-coauthoring",
+      "source_file": "skills/doc-coauthoring/SKILL.md",
+      "line_count": 375,
+      "content_sha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4",
+      "status": "reviewed"
+    },
+    {
+      "name": "documents:documents",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 555,
+      "content_sha256": "2412c240a6412eb8186d1daf0b92cbb828f4674069fa90d19243fb5fb58a2639",
+      "status": "reviewed"
+    },
+    {
+      "name": "graphify",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 795,
+      "content_sha256": "e1150326f0ed06db45e735ecb92b9d3048c9d165d61f61c5ecc728758a9c21f2",
+      "status": "reviewed"
+    },
+    {
+      "name": "imagegen",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 316,
+      "content_sha256": "706d4d96e1d5c9e6023fe3ccabba1bb34b364024d344fd25b8515ec7d28fe3c4",
       "status": "reviewed"
     },
     {
@@ -104,80 +195,10 @@
       "status": "reviewed"
     },
     {
-      "name": "computer-use:computer-use",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 30,
-      "content_sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:create-a-backend",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 115,
-      "content_sha256": "0ac49fd640ce4928588b1f9be65c17540dcec0b51f3a6d5b5fad3e6e1074ba86",
-      "status": "reviewed"
-    },
-    {
-      "name": "work-pets:create-pet",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 172,
-      "content_sha256": "841354fb8116f8fdfd3b643b30828f5180196c594d3fed9b669b948b88892af1",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:custom-metrics",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 157,
-      "content_sha256": "dda9871df28f58001367e6ee923912c3b41d3ed77a4ef665ce0552227760d4f1",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:deep-security-scan",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 81,
-      "content_sha256": "d6aed0d9b47065a1384a96d0a45c843b0cda8ba48e3d2cbe96c65357c6e55ee3",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:define-security-policy",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 94,
-      "content_sha256": "2817e1a03980a7ebea478c8d9e6c622e3c6205123e767a1e32f0204c06729cc7",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:deployments-cicd",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 363,
-      "content_sha256": "61c628114c8703a9dc753ca94ee63f5b3d5cbd70fc5caa2b02d9dfd92ea5fa76",
-      "status": "reviewed"
-    },
-    {
       "name": "mattpocock-skills:diagnosing-bugs",
       "source_file": "catalog://reviewed-skill",
       "line_count": 139,
       "content_sha256": "aa87b0ac245c6d1b203c4678eb34dc101af02291448780c55c5e58ccc1619bd7",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:diagnosing-superpowers",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 121,
-      "content_sha256": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:dispatching-parallel-agents",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 168,
-      "content_sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
-      "status": "reviewed"
-    },
-    {
-      "name": "documents:documents",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 555,
-      "content_sha256": "2412c240a6412eb8186d1daf0b92cbb828f4674069fa90d19243fb5fb58a2639",
       "status": "reviewed"
     },
     {
@@ -188,90 +209,6 @@
       "status": "reviewed"
     },
     {
-      "name": "vercel:domains",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 138,
-      "content_sha256": "48d2b24366dae02b0e8bfe989b30127263f99105308687ab541518e96b613e49",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:env-vars",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 313,
-      "content_sha256": "081d79b5b046276631c10b3db6ff07dbff4a59c057fc9bbc64aa364f82bb3045",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:eve",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 138,
-      "content_sha256": "5e8f3f3d79569288918a31381301e55a9a686dc92ec053f10eb5eda93d58d037",
-      "status": "reviewed"
-    },
-    {
-      "name": "spreadsheets:excel-live-control",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 513,
-      "content_sha256": "55335802aeb641f8819f0020d4fa172b069376aaa00ab7934f3426d8a121509a",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:executing-plans",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 322,
-      "content_sha256": "e4649e59880ef2643d1da128e3d607e87e3f969410d72095a5bf65811b6036dc",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:finding-discovery",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 160,
-      "content_sha256": "14cc797e750ca4bdd8b060c4cf96d7d32f25b132aa8f80d0a0837683fe010790",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:finishing-a-development-branch",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 226,
-      "content_sha256": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:fix-finding",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 99,
-      "content_sha256": "ba7311f43b2c0742da0d5c6bdb2f0b26601c09cc59747cf8c62a09f8d0bb86d2",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:flags-sdk",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 527,
-      "content_sha256": "2149f8b2ff5ac44022103cd3f36895504bfc436698bd90fa7fe1bcd9b4e99cb4",
-      "status": "reviewed"
-    },
-    {
-      "name": "build-web-apps:frontend-app-builder",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 186,
-      "content_sha256": "9273de02827b29534be28fb2b37154c1571ac38b4e20d3ef5482b7e22af67394",
-      "status": "reviewed"
-    },
-    {
-      "name": "build-web-apps:frontend-testing-debugging",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 143,
-      "content_sha256": "03724620cf7e7de425b607a5492f572d867b1cf5d9c92c74bf50d057d7415e0b",
-      "status": "reviewed"
-    },
-    {
-      "name": "graphify",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 795,
-      "content_sha256": "e1150326f0ed06db45e735ecb92b9d3048c9d165d61f61c5ecc728758a9c21f2",
-      "status": "reviewed"
-    },
-    {
       "name": "mattpocock-skills:grilling",
       "source_file": "catalog://reviewed-skill",
       "line_count": 31,
@@ -279,73 +216,45 @@
       "status": "reviewed"
     },
     {
-      "name": "product-design:ideate",
+      "name": "mattpocock-skills:pr",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 192,
-      "content_sha256": "649e8782ca93d5aece712964fae5be2b111cc3143577e1507b98df7f9d8e6bde",
+      "line_count": 171,
+      "content_sha256": "57658baca2e50e9cf98fdb6b74a51f2afd34b71019d516f7c5d45a51a28354b0",
       "status": "reviewed"
     },
     {
-      "name": "product-design:image-to-code",
+      "name": "mattpocock-skills:prototype",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 137,
-      "content_sha256": "694b4102bc339e3038173f8063d83a19e08d2a2cfab1f2e478d6412870a61ff0",
+      "line_count": 27,
+      "content_sha256": "f74ae01f4fc454d3a4ef21271920f1706e626271e715dda0559e489f45c792c3",
       "status": "reviewed"
     },
     {
-      "name": "imagegen",
+      "name": "mattpocock-skills:research",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 316,
-      "content_sha256": "706d4d96e1d5c9e6023fe3ccabba1bb34b364024d344fd25b8515ec7d28fe3c4",
+      "line_count": 13,
+      "content_sha256": "524b404b1ca373a8b00f63a64667ec4b0a61c3c9cf4e8f246e639be859bb6979",
       "status": "reviewed"
     },
     {
-      "name": "product-design:index",
+      "name": "mattpocock-skills:tdd",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 152,
-      "content_sha256": "8e9916d9e5dc3b6a394bedcaa38cd9c8833a1f3b0c4538b75647cf9f62f779fc",
+      "line_count": 39,
+      "content_sha256": "969583080caf842ae86a53501a0091eced13fd89cad65d3aa75c09112318ff33",
       "status": "reviewed"
     },
     {
-      "name": "vercel:is-agentic",
+      "name": "mattpocock-skills:wizard",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 72,
-      "content_sha256": "de940bb2d220866c0172f133bb58ed1c0687a858a5d024ef219781a6653b4ee4",
+      "line_count": 45,
+      "content_sha256": "dbefb750eae07d9f8b05ab1084f6acfdda2752df2a6b577c46a505e2bc790164",
       "status": "reviewed"
     },
     {
-      "name": "vercel:knowledge-update",
+      "name": "mattpocock-skills:writing-for-agents",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 104,
-      "content_sha256": "9849b61e6bf847d9dc1f263ea6c7777f4c248ec53c93af43225e15c03f818aad",
-      "status": "reviewed"
-    },
-    {
-      "name": "pages:maintain-space",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 50,
-      "content_sha256": "53570e6cb8663d370dce15ed0d67208876c3b13015832c352daa759213e7378e",
-      "status": "reviewed"
-    },
-    {
-      "name": "pages:manage-schedules",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 95,
-      "content_sha256": "e0a464a83f15a6e896c5536cab775f667ebd0dd61eb64fe3c877a41935d64bd9",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:marketplace",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 127,
-      "content_sha256": "580f3cd836488f0c09ff092c498cbdfa04cd15f8404e465ae48845b53294300c",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:microfrontends",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 81,
-      "content_sha256": "9dbe1a3db8bfa3441b1412b019f518e3b6af341564a3e84a7b1d0073af8eba05",
+      "line_count": 82,
+      "content_sha256": "1c0c4ebf2d221917591144f0ced4fe46dae13301cb3d6d93fc88ecf0dda6aed2",
       "status": "reviewed"
     },
     {
@@ -370,10 +279,31 @@
       "status": "reviewed"
     },
     {
+      "name": "pages:maintain-space",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 50,
+      "content_sha256": "53570e6cb8663d370dce15ed0d67208876c3b13015832c352daa759213e7378e",
+      "status": "reviewed"
+    },
+    {
+      "name": "pages:manage-schedules",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 95,
+      "content_sha256": "e0a464a83f15a6e896c5536cab775f667ebd0dd61eb64fe3c877a41935d64bd9",
+      "status": "reviewed"
+    },
+    {
       "name": "pages:organize-space",
       "source_file": "catalog://reviewed-skill",
       "line_count": 52,
       "content_sha256": "fe553fb15809c972ae528d64917489e958f8cbf9432629caa79fd6da6b207da4",
+      "status": "reviewed"
+    },
+    {
+      "name": "pages:write-page",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 77,
+      "content_sha256": "7b557f210d68d29ee5d1e979c431efd86b50970a55bed0c3a862741feecebdab",
       "status": "reviewed"
     },
     {
@@ -384,24 +314,10 @@
       "status": "reviewed"
     },
     {
-      "name": "work-pets:pets",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 50,
-      "content_sha256": "1bf5d45fd6a6390aab777229293fb05cef7cf898aac882f8955e40c378e52fcd",
-      "status": "reviewed"
-    },
-    {
       "name": "plugin-management:plugin-management",
       "source_file": "catalog://reviewed-skill",
       "line_count": 59,
       "content_sha256": "653841cc21205269f08b0ce135891e1518dac616a766bcfb0b57d788d3f68b10",
-      "status": "reviewed"
-    },
-    {
-      "name": "mattpocock-skills:pr",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 171,
-      "content_sha256": "57658baca2e50e9cf98fdb6b74a51f2afd34b71019d516f7c5d45a51a28354b0",
       "status": "reviewed"
     },
     {
@@ -412,59 +328,38 @@
       "status": "reviewed"
     },
     {
-      "name": "codex-security:propose-security-hardening",
+      "name": "product-design:audit",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 243,
-      "content_sha256": "ad07d88da7c2bc9e551849cdde686b0daad380ed0aac798e6c06444681d75959",
+      "line_count": 166,
+      "content_sha256": "087f798c3fe02e91b4cca18cc0f42c358a4dc2c02ccf37a348b476fb19b64aa3",
       "status": "reviewed"
     },
     {
-      "name": "mattpocock-skills:prototype",
+      "name": "product-design:ideate",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 27,
-      "content_sha256": "f74ae01f4fc454d3a4ef21271920f1706e626271e715dda0559e489f45c792c3",
+      "line_count": 192,
+      "content_sha256": "649e8782ca93d5aece712964fae5be2b111cc3143577e1507b98df7f9d8e6bde",
       "status": "reviewed"
     },
     {
-      "name": "vercel:queues",
+      "name": "product-design:image-to-code",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 238,
-      "content_sha256": "38ad06c8c9785b944ce887a94bdb60511f4f6e8eda3b2fef01cadd5a1b16342b",
+      "line_count": 137,
+      "content_sha256": "694b4102bc339e3038173f8063d83a19e08d2a2cfab1f2e478d6412870a61ff0",
       "status": "reviewed"
     },
     {
-      "name": "build-web-apps:react-best-practices",
+      "name": "product-design:index",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 143,
-      "content_sha256": "cc7d03309817f392c419a203e1bc1f1759ef94831f7dbedf39d91a35ac5bc86a",
+      "line_count": 152,
+      "content_sha256": "8e9916d9e5dc3b6a394bedcaa38cd9c8833a1f3b0c4538b75647cf9f62f779fc",
       "status": "reviewed"
     },
     {
-      "name": "vercel:react-best-practices",
+      "name": "product-design:url-to-code",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 187,
-      "content_sha256": "5c1b1512e76413a9706309569c4c88827ed86b00dff9338849bf64caae7d3921",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:receiving-code-review",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 206,
-      "content_sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:requesting-code-review",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 96,
-      "content_sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
-      "status": "reviewed"
-    },
-    {
-      "name": "mattpocock-skills:research",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 13,
-      "content_sha256": "524b404b1ca373a8b00f63a64667ec4b0a61c3c9cf4e8f246e639be859bb6979",
+      "line_count": 145,
+      "content_sha256": "2624d0e2ec5f14ba2a4bf74fe05aaa23520b4fb76ca57973c9dadd54fd4b09d2",
       "status": "reviewed"
     },
     {
@@ -472,41 +367,6 @@
       "source_file": "catalog://reviewed-skill",
       "line_count": 357,
       "content_sha256": "fbcd39d6abe803cf7aa49c1880815bc8e22ba2af87a23681944f687bb7629eb1",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:routing-middleware",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 291,
-      "content_sha256": "521821d60f7af332239ffcf896151e9eb625334c14202430ff60a91af3248165",
-      "status": "reviewed"
-    },
-    {
-      "name": "vercel:runtime-cache",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 283,
-      "content_sha256": "b05ffa80629040a4a736946346befdc777bc0b67bd65838800f0656aca9fcae7",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:security-diff-scan",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 40,
-      "content_sha256": "f85962d46f141227d794a25253a39232bc4e1ad756509ecd3d8769b85b735136",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:security-scan",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 43,
-      "content_sha256": "104e2f93fc965c34e91970f517a89e330d5b29dbb243dcea5d95d83f14d135cf",
-      "status": "reviewed"
-    },
-    {
-      "name": "build-web-apps:shadcn-best-practices",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 241,
-      "content_sha256": "7678f5168d4ee6f3ae3ce4d3d41c654f0aebc7b88cbc392a9504822dec0dff28",
       "status": "reviewed"
     },
     {
@@ -538,24 +398,17 @@
       "status": "reviewed"
     },
     {
+      "name": "spreadsheets:excel-live-control",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 513,
+      "content_sha256": "55335802aeb641f8819f0020d4fa172b069376aaa00ab7934f3426d8a121509a",
+      "status": "reviewed"
+    },
+    {
       "name": "spreadsheets:spreadsheets",
       "source_file": "catalog://reviewed-skill",
       "line_count": 468,
       "content_sha256": "6d8034aaba4dfb23ce8d1aec92e5bbe6fa1c5079033e2244f4a27445ef867e9b",
-      "status": "reviewed"
-    },
-    {
-      "name": "build-web-apps:stripe-best-practices",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 28,
-      "content_sha256": "5062f0c980030af377a0ac33b77c9d233676e2ecbb57b3d3cd8734fc0da464b2",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:subagent-driven-development",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 337,
-      "content_sha256": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
       "status": "reviewed"
     },
     {
@@ -573,6 +426,62 @@
       "status": "reviewed"
     },
     {
+      "name": "superpowers:brainstorming",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 295,
+      "content_sha256": "61a7ef918652108c76a3fd01e02dd92d39996c6b46d4cb2819cbd03f6c45e46a",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:diagnosing-superpowers",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 121,
+      "content_sha256": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:dispatching-parallel-agents",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 168,
+      "content_sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:executing-plans",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 322,
+      "content_sha256": "e4649e59880ef2643d1da128e3d607e87e3f969410d72095a5bf65811b6036dc",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:finishing-a-development-branch",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 226,
+      "content_sha256": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:receiving-code-review",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 206,
+      "content_sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:requesting-code-review",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 96,
+      "content_sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:subagent-driven-development",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 337,
+      "content_sha256": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75",
+      "status": "reviewed"
+    },
+    {
       "name": "superpowers:systematic-debugging",
       "source_file": "catalog://reviewed-skill",
       "line_count": 284,
@@ -580,59 +489,10 @@
       "status": "reviewed"
     },
     {
-      "name": "mattpocock-skills:tdd",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 39,
-      "content_sha256": "969583080caf842ae86a53501a0091eced13fd89cad65d3aa75c09112318ff33",
-      "status": "reviewed"
-    },
-    {
-      "name": "template-creator:template-creator",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 207,
-      "content_sha256": "244bfef01d3e17c6013952ccf34621a90ddfee9c7828058245c3c46f51114944",
-      "status": "reviewed"
-    },
-    {
       "name": "superpowers:test-driven-development",
       "source_file": "catalog://reviewed-skill",
       "line_count": 331,
       "content_sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:threat-model",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 21,
-      "content_sha256": "42568e50c787c4c0bfb9495ad67e72ab6c1a951bb910ecba2c67cff8961c4d56",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:track-findings",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 93,
-      "content_sha256": "a6d2f30e6d5ca7bd9d74d83017f2f5481c5829585941208a1673b82c683d292b",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:triage-finding",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 95,
-      "content_sha256": "83081950bd4b29ff37cf82d137aec164532ae56b03dbaad3f4dd1d5423e758a7",
-      "status": "reviewed"
-    },
-    {
-      "name": "work-pets:update-pet",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 44,
-      "content_sha256": "c63c98d67b6ad781a72a8f9837ba1fb5e2d2a8054a2562e4025890a97d8a0e67",
-      "status": "reviewed"
-    },
-    {
-      "name": "product-design:url-to-code",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 145,
-      "content_sha256": "2624d0e2ec5f14ba2a4bf74fe05aaa23520b4fb76ca57973c9dadd54fd4b09d2",
       "status": "reviewed"
     },
     {
@@ -650,10 +510,192 @@
       "status": "reviewed"
     },
     {
-      "name": "codex-security:validation",
+      "name": "superpowers:verification-before-completion",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 112,
-      "content_sha256": "3c4660f79b12a92728e6bb25027064c3a911d0960d39aeafc8fda9e42ce517a5",
+      "line_count": 121,
+      "content_sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:writing-plans",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 205,
+      "content_sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
+      "status": "reviewed"
+    },
+    {
+      "name": "superpowers:writing-skills",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 400,
+      "content_sha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+      "status": "reviewed"
+    },
+    {
+      "name": "template-creator:template-creator",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 207,
+      "content_sha256": "244bfef01d3e17c6013952ccf34621a90ddfee9c7828058245c3c46f51114944",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:access-protected-vercel-deployment",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 170,
+      "content_sha256": "24d295fa893a22b318f19d87fc52865fc0e26fe43abea62ce787769d00a79fc6",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:ai-gateway",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 294,
+      "content_sha256": "f3e5ad702d8eaafb07fb02db81b24d75added47dad1321c90b0f4996cccb41b6",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:ai-sdk",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 388,
+      "content_sha256": "9d6dd182e5e61afc94f7d3867012cfdc19ebbb634e4370e4ed7782919fc1038a",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:auth",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 669,
+      "content_sha256": "7a1ccb7beecef0959e224fef7de2bcf460e6f58c6685bd3359ec0e6103e063d4",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:bootstrap",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 234,
+      "content_sha256": "2306dbb1343c5acfdf7aedcc5f27751bd73570e2a615e71c873f15f339616d6b",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:build-agents",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 174,
+      "content_sha256": "334a5f42b57d7536fae1971191dce34ad47487a17f21cab1cc6709d4119203fb",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:cdn-caching",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 292,
+      "content_sha256": "10f91d3abe3378046cffeb214871a9bceab3c3a1128015244f99e76fae283a3e",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:chat-sdk",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 203,
+      "content_sha256": "65b932858227ff89784636bbdf42e3573397175405397644c37310700ee169b1",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:create-a-backend",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 115,
+      "content_sha256": "0ac49fd640ce4928588b1f9be65c17540dcec0b51f3a6d5b5fad3e6e1074ba86",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:custom-metrics",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 157,
+      "content_sha256": "dda9871df28f58001367e6ee923912c3b41d3ed77a4ef665ce0552227760d4f1",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:deployments-cicd",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 363,
+      "content_sha256": "61c628114c8703a9dc753ca94ee63f5b3d5cbd70fc5caa2b02d9dfd92ea5fa76",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:domains",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 138,
+      "content_sha256": "48d2b24366dae02b0e8bfe989b30127263f99105308687ab541518e96b613e49",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:env-vars",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 313,
+      "content_sha256": "081d79b5b046276631c10b3db6ff07dbff4a59c057fc9bbc64aa364f82bb3045",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:eve",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 138,
+      "content_sha256": "5e8f3f3d79569288918a31381301e55a9a686dc92ec053f10eb5eda93d58d037",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:flags-sdk",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 527,
+      "content_sha256": "2149f8b2ff5ac44022103cd3f36895504bfc436698bd90fa7fe1bcd9b4e99cb4",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:is-agentic",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 72,
+      "content_sha256": "de940bb2d220866c0172f133bb58ed1c0687a858a5d024ef219781a6653b4ee4",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:knowledge-update",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 104,
+      "content_sha256": "9849b61e6bf847d9dc1f263ea6c7777f4c248ec53c93af43225e15c03f818aad",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:marketplace",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 127,
+      "content_sha256": "580f3cd836488f0c09ff092c498cbdfa04cd15f8404e465ae48845b53294300c",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:microfrontends",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 81,
+      "content_sha256": "9dbe1a3db8bfa3441b1412b019f518e3b6af341564a3e84a7b1d0073af8eba05",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:queues",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 238,
+      "content_sha256": "38ad06c8c9785b944ce887a94bdb60511f4f6e8eda3b2fef01cadd5a1b16342b",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:react-best-practices",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 187,
+      "content_sha256": "5c1b1512e76413a9706309569c4c88827ed86b00dff9338849bf64caae7d3921",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:routing-middleware",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 291,
+      "content_sha256": "521821d60f7af332239ffcf896151e9eb625334c14202430ff60a91af3248165",
+      "status": "reviewed"
+    },
+    {
+      "name": "vercel:runtime-cache",
+      "source_file": "catalog://reviewed-skill",
+      "line_count": 283,
+      "content_sha256": "b05ffa80629040a4a736946346befdc777bc0b67bd65838800f0656aca9fcae7",
       "status": "reviewed"
     },
     {
@@ -720,17 +762,10 @@
       "status": "reviewed"
     },
     {
-      "name": "superpowers:verification-before-completion",
+      "name": "vercel:workflow",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 121,
-      "content_sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
-      "status": "reviewed"
-    },
-    {
-      "name": "codex-security:verify-fix",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 49,
-      "content_sha256": "3d4530484c7e4c18b6afe7c6527247e96517dce1ebd1bda9d349cd367ecb0ae3",
+      "line_count": 1246,
+      "content_sha256": "23c2875814cbe17ea2f16f0f80b082a05943f59bb09bcc3631d392f6cbe33de3",
       "status": "reviewed"
     },
     {
@@ -741,52 +776,24 @@
       "status": "reviewed"
     },
     {
-      "name": "codex-security:vulnerability-writeup",
+      "name": "work-pets:create-pet",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 185,
-      "content_sha256": "d08582d9963ce3bfbc3fe81b6e85a01e6fe306713d7951bfd8dd2fbc3df75de4",
+      "line_count": 172,
+      "content_sha256": "841354fb8116f8fdfd3b643b30828f5180196c594d3fed9b669b948b88892af1",
       "status": "reviewed"
     },
     {
-      "name": "mattpocock-skills:wizard",
+      "name": "work-pets:pets",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 45,
-      "content_sha256": "dbefb750eae07d9f8b05ab1084f6acfdda2752df2a6b577c46a505e2bc790164",
+      "line_count": 50,
+      "content_sha256": "1bf5d45fd6a6390aab777229293fb05cef7cf898aac882f8955e40c378e52fcd",
       "status": "reviewed"
     },
     {
-      "name": "vercel:workflow",
+      "name": "work-pets:update-pet",
       "source_file": "catalog://reviewed-skill",
-      "line_count": 1246,
-      "content_sha256": "23c2875814cbe17ea2f16f0f80b082a05943f59bb09bcc3631d392f6cbe33de3",
-      "status": "reviewed"
-    },
-    {
-      "name": "pages:write-page",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 77,
-      "content_sha256": "7b557f210d68d29ee5d1e979c431efd86b50970a55bed0c3a862741feecebdab",
-      "status": "reviewed"
-    },
-    {
-      "name": "mattpocock-skills:writing-for-agents",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 82,
-      "content_sha256": "1c0c4ebf2d221917591144f0ced4fe46dae13301cb3d6d93fc88ecf0dda6aed2",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:writing-plans",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 205,
-      "content_sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
-      "status": "reviewed"
-    },
-    {
-      "name": "superpowers:writing-skills",
-      "source_file": "catalog://reviewed-skill",
-      "line_count": 400,
-      "content_sha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+      "line_count": 44,
+      "content_sha256": "c63c98d67b6ad781a72a8f9837ba1fb5e2d2a8054a2562e4025890a97d8a0e67",
       "status": "reviewed"
     }
   ]

@@ -17,14 +17,18 @@ REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 SKILL_DEST="$CODEX_HOME/skills/codex-app-agent"
 CHECKLIST_DEST="$CODEX_HOME/skills/execution-checklist"
+DOC_DEST="$CODEX_HOME/skills/doc-coauthoring"
 PROJECT_DEST="$PROJECT_PATH/.codex-app-agent"
 
 install_skill() {
-  mkdir -p "$SKILL_DEST" "$CHECKLIST_DEST"
+  mkdir -p "$SKILL_DEST" "$CHECKLIST_DEST" "$DOC_DEST"
   cp -R "$REPO/skills/codex-app-agent/." "$SKILL_DEST/"
   cp -R "$REPO/skills/execution-checklist/." "$CHECKLIST_DEST/"
+  cp -R "$REPO/skills/doc-coauthoring/." "$DOC_DEST/"
   echo "Installed skill: $SKILL_DEST"
   echo "Installed skill: $CHECKLIST_DEST"
+  echo "Installed skill: $DOC_DEST"
+  echo "Note: the bundled Claude Code plugins (plugins/plugins.json) install with adapters/claude/install.sh --plugins."
 }
 
 install_project() {
