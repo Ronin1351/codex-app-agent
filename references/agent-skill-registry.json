@@ -1493,6 +1493,103 @@
     ]
   },
   {
+    "artifacts": [
+      "BRIEF.md",
+      "SPIKES.md",
+      "ANSWER_KEY.md",
+      "DIRECTION.md",
+      "ARCHITECTURE.md",
+      "DECISIONS.md",
+      "BACKLOG.md",
+      "FOUNDATION.md",
+      "foundation-status.md"
+    ],
+    "catalog_name": "lancer-foundation",
+    "category": "core app-development",
+    "conflicts": [],
+    "content_sha256": "adfbf39ad9a5ebeb0104ebcc65c6c19a95c01e6dbdfa6049936c8ca413957bb8",
+    "dependencies": [],
+    "evidence_headings": [
+      "STAGE 0 — GRILL (short)",
+      "STAGE 1 — BRIEF  ▸ CHECKPOINT 1",
+      "STAGE 2 — SPIKES (only if K has `blocks-architecture` items)",
+      "STAGE 3 — DIRECTION + BAR",
+      "STAGE 4 — ARCHITECTURE CONTRACT  ▸ CHECKPOINT 2",
+      "STAGE 5 — SCAFFOLD + QUALITY HARNESS",
+      "STAGE 6 — WALKING SKELETON",
+      "STAGE 7 — GATE  ▸ CHECKPOINT 3",
+      "STAGE 8 — BACKLOG + HANDOFF"
+    ],
+    "frontmatter_name": "lancer-foundation",
+    "gates": [
+      "STAGE 1 — BRIEF  ▸ CHECKPOINT 1",
+      "STAGE 4 — ARCHITECTURE CONTRACT  ▸ CHECKPOINT 2",
+      "STAGE 7 — GATE  ▸ CHECKPOINT 3"
+    ],
+    "line_count": 195,
+    "name": "lancer-foundation",
+    "prerequisites": [],
+    "purpose": "Builds the foundation for a project starting from nothing - brief, scope cut, risk spikes, direction, architecture contract, scaffold, quality harness, walking skeleton, backlog - then gates it and hands off to Lancer Loop. Use when nothing is built yet, or the user says /lancer-foundation or \"Lancer Foundation\".",
+    "review_status": "reviewed",
+    "situations": [
+      "greenfield app",
+      "start of day",
+      "new feature"
+    ],
+    "source_file": "skills/lancer-foundation/SKILL.md",
+    "triggers": [
+      "Builds the foundation for a project starting from nothing - brief, scope cut, risk spikes, direction, architecture contract, scaffold, quality harness, walking skeleton, backlog - then gates it and hands off to Lancer Loop. Use when nothing is built yet, or the user says /lancer-foundation or \"Lancer Foundation\"."
+    ],
+    "verification": [
+      "STAGE 7 — GATE  ▸ CHECKPOINT 3"
+    ]
+  },
+  {
+    "artifacts": [
+      "loop-prompt.md",
+      "loop-status.md"
+    ],
+    "catalog_name": "lancer-loop",
+    "category": "core app-development",
+    "conflicts": [],
+    "content_sha256": "e5f9abd4a28e16920499fedaeedce838ed6867eff400978c858fcb4a41aba9f6",
+    "dependencies": [],
+    "evidence_headings": [
+      "PHASE 1 — GRILL",
+      "PHASE 2 — ROUTE",
+      "PHASE 3 — EMIT",
+      "PHASE 4 — RUN (only on \"run now\")",
+      "TEMPLATES",
+      "T1 — Anchored Gauntlet",
+      "T2 — Spec Gauntlet",
+      "T3 — Tournament",
+      "T4 — Red-Team"
+    ],
+    "frontmatter_name": "lancer-loop",
+    "gates": [
+      "PHASE 2 — ROUTE",
+      "PHASE 4 — RUN (only on \"run now\")"
+    ],
+    "line_count": 300,
+    "name": "lancer-loop",
+    "prerequisites": [],
+    "purpose": "Interviews the user about what they are building, then deterministically selects and fills the best agent loop prompt (Anchored Gauntlet, Spec Gauntlet, Tournament, Red-Team, or a chain of them). Use when the user wants a high-quality multi-agent build/polish loop or says /lancer-loop or \"Lancer Loop\".",
+    "review_status": "reviewed",
+    "situations": [
+      "during development",
+      "new feature",
+      "UI redesign",
+      "refactoring"
+    ],
+    "source_file": "skills/lancer-loop/SKILL.md",
+    "triggers": [
+      "Interviews the user about what they are building, then deterministically selects and fills the best agent loop prompt (Anchored Gauntlet, Spec Gauntlet, Tournament, Red-Team, or a chain of them). Use when the user wants a high-quality multi-agent build/polish loop or says /lancer-loop or \"Lancer Loop\"."
+    ],
+    "verification": [
+      "SHARED BLOCKS (append once to every emitted prompt)"
+    ]
+  },
+  {
     "name": "mattpocock-skills:code-review",
     "catalog_name": "code-review",
     "frontmatter_name": "code-review",

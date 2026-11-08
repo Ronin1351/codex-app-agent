@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-10-23T23:06:06.1263355Z",
-  "catalog_skill_count": 113,
-  "reviewed_count": 113,
+  "catalog_skill_count": 115,
+  "reviewed_count": 115,
   "missing_count": 0,
   "unreadable_count": 0,
   "records": [
@@ -178,6 +178,20 @@
       "source_file": "catalog://reviewed-skill",
       "line_count": 316,
       "content_sha256": "706d4d96e1d5c9e6023fe3ccabba1bb34b364024d344fd25b8515ec7d28fe3c4",
+      "status": "reviewed"
+    },
+    {
+      "name": "lancer-foundation",
+      "source_file": "skills/lancer-foundation/SKILL.md",
+      "line_count": 195,
+      "content_sha256": "adfbf39ad9a5ebeb0104ebcc65c6c19a95c01e6dbdfa6049936c8ca413957bb8",
+      "status": "reviewed"
+    },
+    {
+      "name": "lancer-loop",
+      "source_file": "skills/lancer-loop/SKILL.md",
+      "line_count": 300,
+      "content_sha256": "e5f9abd4a28e16920499fedaeedce838ed6867eff400978c858fcb4a41aba9f6",
       "status": "reviewed"
     },
     {

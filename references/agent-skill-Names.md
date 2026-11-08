@@ -2,7 +2,7 @@
 
 Generated: 2026-10-24
 
-Catalog skills read: 113 (112 audited 2026-10-24; `doc-coauthoring` added 2026-11-07 as a packaged skill)
+Catalog skills read: 115 (112 audited 2026-10-24; `doc-coauthoring` added 2026-11-07, `lancer-foundation` and `lancer-loop` added 2026-11-08 as packaged skills)
 
 - build-web-apps:frontend-app-builder
 - build-web-apps:frontend-testing-debugging
@@ -29,6 +29,8 @@ Catalog skills read: 113 (112 audited 2026-10-24; `doc-coauthoring` added 2026-1
 - documents:documents
 - graphify
 - imagegen
+- lancer-foundation
+- lancer-loop
 - mattpocock-skills:code-review
 - mattpocock-skills:codebase-design
 - mattpocock-skills:diagnosing-bugs

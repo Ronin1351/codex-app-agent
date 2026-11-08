@@ -23,7 +23,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
    ```bash
    ./scripts/install.sh --all --project=/path/to/your/app
    ```
-   This adds the `codex-app-agent`, `execution-checklist` and `doc-coauthoring` skills to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
+   This adds the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop` and `lancer-foundation` skills to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
 2. **Tell the project about it.** Copy `.codex-app-agent/AGENTS.md.template` into your app's `AGENTS.md` (merge it if you already have one), and add your project's own rules there: how data is accessed, how releases happen, what must never be done.
 3. **Open Codex in your app and type one of these:**
 
@@ -39,6 +39,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 4. **Focus mode anywhere else:** add `$i-have-adhd` to any request.
 5. **Documents:** `Use $doc-coauthoring: <what you are writing>` walks a spec, proposal or decision doc through context gathering, section-by-section drafting and a fresh-reader test. In Claude Code it is `/doc-coauthoring`.
 6. **Task checklists:** `Use $execution-checklist: compile <task brief>` builds an evidence-gated execution checklist; `Use $execution-checklist: audit <checklist>` audits one. In Claude Code the same skill is installed by the adapter and called as `/execution-checklist`.
+7. **Builder-critic agent loops:** `Use $lancer-foundation` takes a project that has nothing built yet to an approved walking skeleton (brief, risk spikes, direction, architecture contract, scaffold, gate) and writes `FOUNDATION.md`. `Use $lancer-loop` interviews you, routes to the best loop for the situation (Anchored Gauntlet, Spec Gauntlet, Tournament or Red-Team), then emits the filled prompt or runs it. It reads `FOUNDATION.md` when present. In Claude Code they are `/lancer-foundation` and `/lancer-loop`.
 
 ### Claude Code
 
@@ -49,7 +50,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
    ```bash
    ./adapters/claude/install.sh --plugins
    ```
-   This installs the `app-agent`, `execution-checklist` and `doc-coauthoring` skills, the `app-agent-verifier` subagent, and, with `-Plugins`/`--plugins`, the bundled Claude Code plugins listed below. Then start a new Claude Code session.
+   This installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop` and `lancer-foundation` skills, the `app-agent-verifier` subagent, and, with `-Plugins`/`--plugins`, the bundled Claude Code plugins listed below. Then start a new Claude Code session.
 2. **Optional, recommended project setup.** Run `./adapters/claude/install.ps1 -Templates -ProjectPath C:\path\to\your\app` (or `install.sh --templates --path=/path/to/your/app`). Then edit `<your app>/.claude/app-agent.json`: base branch, CI commands, and extra risk rules. Add `@AGENTS.md` to your `CLAUDE.md` so Claude reads the same project rules as Codex.
 3. **Open Claude Code in your app and type:**
 
@@ -72,6 +73,8 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 | `codex-app-agent` / `app-agent` | skill | yes | yes | The operating model: modes, routing, gates, completion contract |
 | `execution-checklist` | skill | yes | yes | Evidence-gated task checklists (compile / audit) |
 | `doc-coauthoring` | skill | yes | yes | Three-stage document co-authoring (Anthropic, Apache-2.0) |
+| `lancer-foundation` | skill | yes | yes | From-scratch foundation: brief, spikes, architecture contract, walking skeleton, gate |
+| `lancer-loop` | skill | yes | yes | Interview-driven router to builder-critic agent loops (Gauntlet, Tournament, Red-Team) |
 | Spartan AI Toolkit (`ai-toolkit@spartan-marketplace`) | plugin | — | `--plugins` | `/spartan:*` workflow commands, rules, skills and agents (MIT) |
 | PlanetScale (`planetscale@planetscale`) | plugin | — | `--plugins` | PlanetScale MCP server plus MySQL/Postgres/Vitess safety skills (Apache-2.0) |
 
@@ -107,7 +110,7 @@ Install the complete Codex bundle into the user skill directory:
 ./scripts/install.sh --all
 ```
 
-The complete installation includes the `codex-app-agent`, `execution-checklist` and `doc-coauthoring` skills and copies the reusable references and prompts into the selected project. It does not install dependencies, change application source code, deploy, commit, push, or alter hosted services.
+The complete installation includes the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop` and `lancer-foundation` skills and copies the reusable references and prompts into the selected project. It does not install dependencies, change application source code, deploy, commit, push, or alter hosted services.
 
 ## Project setup
 

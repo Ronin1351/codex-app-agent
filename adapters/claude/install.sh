@@ -37,6 +37,12 @@ echo "Installed skill:    $ROOT/skills/execution-checklist"
 mkdir -p "$ROOT/skills/doc-coauthoring"
 cp "$ADAPTER/../../skills/doc-coauthoring/SKILL.md" "$ROOT/skills/doc-coauthoring/"
 echo "Installed skill:    $ROOT/skills/doc-coauthoring"
+# Shared skills: Lancer Loop + Lancer Foundation (agents/ is Codex-only metadata).
+for LANCER in lancer-loop lancer-foundation; do
+  mkdir -p "$ROOT/skills/$LANCER"
+  cp "$ADAPTER/../../skills/$LANCER/SKILL.md" "$ROOT/skills/$LANCER/"
+  echo "Installed skill:    $ROOT/skills/$LANCER"
+done
 echo "Installed subagent: $ROOT/agents/app-agent-verifier.md"
 
 if $TEMPLATES; then
