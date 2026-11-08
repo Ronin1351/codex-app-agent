@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lancer Foundation"
+  short_description: "Build an approved foundation for a from-scratch project"
+  default_prompt: "Use $lancer-foundation to take this project from idea to an approved walking skeleton: brief, spikes, direction, architecture contract, scaffold and gate, then hand off to $lancer-loop."

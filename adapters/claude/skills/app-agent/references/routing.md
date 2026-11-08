@@ -9,6 +9,8 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 | Shape an idea or decision | `mattpocock-skills:grill-with-docs` (records ADRs and glossary) | `mattpocock-skills:grilling` |
 | Turn it into tracked work | `mattpocock-skills:to-spec` → `to-tickets` (needs `/setup-matt-pocock-skills` once) | `docs/specs/<name>.md` with a ticket checklist |
 | Work longer than one session | `mattpocock-skills:wayfinder` | A decision list in the spec, plus a handoff each session |
+| Start a project from nothing | `lancer-foundation` (brief → spikes → architecture contract → walking skeleton → gate) | `grill-with-docs`, then a spec and a hand-built skeleton |
+| Long build or polish against a bar (builder + blind critic loop) | `lancer-loop` (reads `FOUNDATION.md` when present) | `tdd` per piece, with `/code-review` as the separate critic |
 | Build a feature or fix | `mattpocock-skills:tdd` | The same loop by hand: failing test, smallest change, refactor |
 | Implement tickets | `mattpocock-skills:implement` | `tdd`, one ticket at a time |
 | Bug, failing test, regression | `mattpocock-skills:diagnosing-bugs` | Reproduce with a failing test, then bisect (`git bisect`, `graphify path`) |
@@ -46,5 +48,6 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 - `mattpocock-skills:handoff` saves to the OS temp folder by design. Copy the file into the project's handoff folder (`handoffDir` in the project config) when the project keeps handoffs.
 - `/i-have-adhd` is user-invoked only. The agent follows the focus-mode rules in SKILL.md when the user asks for it.
 - **Spartan AI Toolkit** (`ai-toolkit`) overlaps the spec/plan/build/review rows above. Those rows stay primary; run a `/spartan:*` command only when the user names it, and never two workflow systems on the same task.
+- `lancer-loop` and `lancer-foundation` are for large, multi-round work. A single feature or bug still goes through the rows above. Both stop for owner approval before running and never deploy, push or spend on their own.
 - `doc-coauthoring` is for documents people will read. Code-adjacent agent docs (`AGENTS.md`, `CLAUDE.md`, skills) still follow `mattpocock-skills:writing-for-agents`.
 - `/code-review` and `/security-review` review the current diff. Run them after `<helper> risk`, so the review knows which areas carry risk.

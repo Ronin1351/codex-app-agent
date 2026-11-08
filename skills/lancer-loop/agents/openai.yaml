@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lancer Loop"
+  short_description: "Interview, then route to the right builder-critic agent loop"
+  default_prompt: "Use $lancer-loop to interview me about what I'm building, pick the best agent loop (Anchored Gauntlet, Spec Gauntlet, Tournament or Red-Team), and fill or run its prompt."

@@ -325,6 +325,28 @@ Each entry below was read in full and recorded with its source hash. Extracted e
 - Artifacts mentioned: hero-v2.png; item-icon-edited.png; references/prompting.md; references/sample-prompts.md; references/cli.md; references/image-api.md; references/codex-network.md
 - Lifecycle situations: during development
 
+## lancer-foundation
+- Category: core app-development
+- Purpose: Builds the foundation for a project starting from nothing - brief, scope cut, risk spikes, direction, architecture contract, scaffold, quality harness, walking skeleton, backlog - then gates it and hands off to Lancer Loop. Use when nothing is built yet, or the user says /lancer-foundation or "Lancer Foundation".
+- Source: skills/lancer-foundation/SKILL.md (packaged; original to this repo)
+- Status: reviewed; lines=195; sha256=adfbf39ad9a5ebeb0104ebcc65c6c19a95c01e6dbdfa6049936c8ca413957bb8
+- Triggers: Builds the foundation for a project starting from nothing - brief, scope cut, risk spikes, direction, architecture contract, scaffold, quality harness, walking skeleton, backlog - then gates it and hands off to Lancer Loop. Use when nothing is built yet, or the user says /lancer-foundation or "Lancer Foundation".
+- Gates: STAGE 1 — BRIEF  ▸ CHECKPOINT 1; STAGE 4 — ARCHITECTURE CONTRACT  ▸ CHECKPOINT 2; STAGE 7 — GATE  ▸ CHECKPOINT 3
+- Verification evidence: STAGE 7 — GATE  ▸ CHECKPOINT 3
+- Artifacts mentioned: BRIEF.md; SPIKES.md; ANSWER_KEY.md; DIRECTION.md; ARCHITECTURE.md; DECISIONS.md; BACKLOG.md; FOUNDATION.md; foundation-status.md
+- Lifecycle situations: greenfield app; start of day; new feature
+
+## lancer-loop
+- Category: core app-development
+- Purpose: Interviews the user about what they are building, then deterministically selects and fills the best agent loop prompt (Anchored Gauntlet, Spec Gauntlet, Tournament, Red-Team, or a chain of them). Use when the user wants a high-quality multi-agent build/polish loop or says /lancer-loop or "Lancer Loop".
+- Source: skills/lancer-loop/SKILL.md (packaged; original to this repo)
+- Status: reviewed; lines=300; sha256=e5f9abd4a28e16920499fedaeedce838ed6867eff400978c858fcb4a41aba9f6
+- Triggers: Interviews the user about what they are building, then deterministically selects and fills the best agent loop prompt (Anchored Gauntlet, Spec Gauntlet, Tournament, Red-Team, or a chain of them). Use when the user wants a high-quality multi-agent build/polish loop or says /lancer-loop or "Lancer Loop".
+- Gates: PHASE 2 — ROUTE; PHASE 4 — RUN (only on "run now")
+- Verification evidence: SHARED BLOCKS (append once to every emitted prompt)
+- Artifacts mentioned: loop-prompt.md; loop-status.md
+- Lifecycle situations: during development; new feature; UI redesign; refactoring
+
 ## mattpocock-skills:code-review
 - Category: core app-development
 - Purpose: Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\".

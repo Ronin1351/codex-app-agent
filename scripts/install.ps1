@@ -14,6 +14,10 @@ $checklistSource = Join-Path $repo 'skills\execution-checklist'
 $checklistDestination = Join-Path $CodexHome 'skills\execution-checklist'
 $docSource = Join-Path $repo 'skills\doc-coauthoring'
 $docDestination = Join-Path $CodexHome 'skills\doc-coauthoring'
+$lancerLoopSource = Join-Path $repo 'skills\lancer-loop'
+$lancerLoopDestination = Join-Path $CodexHome 'skills\lancer-loop'
+$lancerFoundationSource = Join-Path $repo 'skills\lancer-foundation'
+$lancerFoundationDestination = Join-Path $CodexHome 'skills\lancer-foundation'
 $referenceSource = Join-Path $repo 'references'
 $promptSource = Join-Path $repo 'prompts'
 
@@ -32,6 +36,12 @@ function Install-Skill {
   New-Item -ItemType Directory -Path $docDestination -Force | Out-Null
   Copy-Item -Path (Join-Path $docSource '*') -Destination $docDestination -Recurse -Force
   Write-Host "Installed skill: $docDestination"
+  New-Item -ItemType Directory -Path $lancerLoopDestination -Force | Out-Null
+  Copy-Item -Path (Join-Path $lancerLoopSource '*') -Destination $lancerLoopDestination -Recurse -Force
+  Write-Host "Installed skill: $lancerLoopDestination"
+  New-Item -ItemType Directory -Path $lancerFoundationDestination -Force | Out-Null
+  Copy-Item -Path (Join-Path $lancerFoundationSource '*') -Destination $lancerFoundationDestination -Recurse -Force
+  Write-Host "Installed skill: $lancerFoundationDestination"
   Write-Host 'Note: the bundled Claude Code plugins (plugins\plugins.json) install with adapters\claude\install.ps1 -Plugins.'
 }
 
