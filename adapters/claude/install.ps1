@@ -40,6 +40,14 @@ foreach ($lancer in 'lancer-loop', 'lancer-foundation') {
   Write-Host "Installed skill:    $lancerDest"
 }
 
+# Shared skill: Idea Lab (SKILL.md + references; agents\ is Codex-only metadata).
+$ideaLabSrc = Join-Path (Split-Path -Parent (Split-Path -Parent $adapter)) 'skills\idea-lab'
+$ideaLabDest = Join-Path $root 'skills\idea-lab'
+New-Item -ItemType Directory -Path (Join-Path $ideaLabDest 'references') -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $ideaLabSrc 'SKILL.md') -Destination $ideaLabDest -Force
+Copy-Item -Path (Join-Path $ideaLabSrc 'references\*.md') -Destination (Join-Path $ideaLabDest 'references') -Force
+Write-Host "Installed skill:    $ideaLabDest"
+
 $agentDest = Join-Path $root 'agents'
 New-Item -ItemType Directory -Path $agentDest -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $adapter 'agents\app-agent-verifier.md') -Destination $agentDest -Force

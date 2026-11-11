@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea Lab"
+  short_description: "Generate evidence-backed ideas and turn the winner into a build spec"
+  default_prompt: "Use $idea-lab to generate ideas for my domain, research prior art and demand, score them with an independent jury, and turn the winner into SPEC.md and CLAUDE.md."

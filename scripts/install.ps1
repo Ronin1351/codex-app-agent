@@ -18,6 +18,8 @@ $lancerLoopSource = Join-Path $repo 'skills\lancer-loop'
 $lancerLoopDestination = Join-Path $CodexHome 'skills\lancer-loop'
 $lancerFoundationSource = Join-Path $repo 'skills\lancer-foundation'
 $lancerFoundationDestination = Join-Path $CodexHome 'skills\lancer-foundation'
+$ideaLabSource = Join-Path $repo 'skills\idea-lab'
+$ideaLabDestination = Join-Path $CodexHome 'skills\idea-lab'
 $referenceSource = Join-Path $repo 'references'
 $promptSource = Join-Path $repo 'prompts'
 
@@ -42,6 +44,9 @@ function Install-Skill {
   New-Item -ItemType Directory -Path $lancerFoundationDestination -Force | Out-Null
   Copy-Item -Path (Join-Path $lancerFoundationSource '*') -Destination $lancerFoundationDestination -Recurse -Force
   Write-Host "Installed skill: $lancerFoundationDestination"
+  New-Item -ItemType Directory -Path $ideaLabDestination -Force | Out-Null
+  Copy-Item -Path (Join-Path $ideaLabSource '*') -Destination $ideaLabDestination -Recurse -Force
+  Write-Host "Installed skill: $ideaLabDestination"
   Write-Host 'Note: the bundled Claude Code plugins (plugins\plugins.json) install with adapters\claude\install.ps1 -Plugins.'
 }
 

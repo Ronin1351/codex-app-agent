@@ -24,7 +24,7 @@ The installer does not install application dependencies, access hosted services,
 ./adapters/claude/install.sh --plugins
 ```
 
-Installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop` and `lancer-foundation` skills and the `app-agent-verifier` subagent into `~/.claude`, then the bundled plugins at user scope. Add `--project --path=<app>` (`-Project -ProjectPath <app>`) to install into the app's `.claude/` and the plugins at project scope instead.
+Installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation` and `idea-lab` skills and the `app-agent-verifier` subagent into `~/.claude`, then the bundled plugins at user scope. Add `--project --path=<app>` (`-Project -ProjectPath <app>`) to install into the app's `.claude/` and the plugins at project scope instead.
 
 ## Windows: guided installation
 
@@ -34,7 +34,7 @@ Installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop
 
 Choose one option:
 
-1. **Codex skills** — installs `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop` and `lancer-foundation` under `$CODEX_HOME/skills`.
+1. **Codex skills** — installs `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation` and `idea-lab` under `$CODEX_HOME/skills`.
 2. **Project references** — copies prompts, registry, matrix, and templates under `.codex-app-agent` in the current project.
 3. **Both** — performs both operations.
 
@@ -79,8 +79,8 @@ Pull a new version, inspect the diff, then rerun the same installer command. The
 
 Removal is deliberately manual so the target is visible. Delete only the exact installed directories:
 
-- user skills: `$CODEX_HOME/skills/codex-app-agent`, `$CODEX_HOME/skills/execution-checklist`, `$CODEX_HOME/skills/doc-coauthoring`, `$CODEX_HOME/skills/lancer-loop` and `$CODEX_HOME/skills/lancer-foundation`
-- Claude Code skills: `~/.claude/skills/app-agent`, `~/.claude/skills/execution-checklist`, `~/.claude/skills/doc-coauthoring`, `~/.claude/skills/lancer-loop`, `~/.claude/skills/lancer-foundation`, and `~/.claude/agents/app-agent-verifier.md`
+- user skills: `$CODEX_HOME/skills/codex-app-agent`, `$CODEX_HOME/skills/execution-checklist`, `$CODEX_HOME/skills/doc-coauthoring`, `$CODEX_HOME/skills/lancer-loop`, `$CODEX_HOME/skills/lancer-foundation` and `$CODEX_HOME/skills/idea-lab`
+- Claude Code skills: `~/.claude/skills/app-agent`, `~/.claude/skills/execution-checklist`, `~/.claude/skills/doc-coauthoring`, `~/.claude/skills/lancer-loop`, `~/.claude/skills/lancer-foundation`, `~/.claude/skills/idea-lab`, and `~/.claude/agents/app-agent-verifier.md`
 - Claude Code plugins: `claude plugin uninstall ai-toolkit@spartan-marketplace` and `claude plugin uninstall planetscale@planetscale`
 - project bundle: `<project>/.codex-app-agent`
 

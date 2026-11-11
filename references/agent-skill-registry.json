@@ -1428,6 +1428,60 @@
     ]
   },
   {
+    "artifacts": [
+      "ledger.md",
+      "G1-frame.md",
+      "G2-ideas.md",
+      "G3-shortlist.md",
+      "G4-evidence.md",
+      "G5-jury.md",
+      "S0-evidence.md",
+      "S4-jury-run<n>.md",
+      "SPEC.md",
+      "CLAUDE.md"
+    ],
+    "catalog_name": "idea-lab",
+    "category": "core app-development",
+    "conflicts": [],
+    "content_sha256": "06be96ef76472b86ce638cc42834806de1691db414983ff07a6ec29362625b37",
+    "dependencies": [
+      "references/rules.md",
+      "references/generate.md",
+      "references/spec.md",
+      "references/ledger-template.md"
+    ],
+    "evidence_headings": [
+      "Modes",
+      "Start of run",
+      "Execution rules",
+      "User checkpoints (stop and ask; never decide these yourself)",
+      "Ending a run",
+      "Never"
+    ],
+    "frontmatter_name": "idea-lab",
+    "gates": [
+      "User checkpoints (stop and ask; never decide these yourself)",
+      "Execution rules"
+    ],
+    "line_count": 63,
+    "name": "idea-lab",
+    "prerequisites": [],
+    "purpose": "Generates evidence-backed product or business ideas, scores them with an independent jury, and turns the winner into a validated build spec (SPEC.md + CLAUDE.md). Use when the user wants new ideas in a domain, wants an idea scored, validated or risk-checked, wants an idea turned into a spec for a coding agent, or says /idea-lab or \"Idea Lab\".",
+    "review_status": "reviewed",
+    "situations": [
+      "product idea discovery",
+      "greenfield app",
+      "new feature"
+    ],
+    "source_file": "skills/idea-lab/SKILL.md",
+    "triggers": [
+      "Generates evidence-backed product or business ideas, scores them with an independent jury, and turns the winner into a validated build spec (SPEC.md + CLAUDE.md). Use when the user wants new ideas in a domain, wants an idea scored, validated or risk-checked, wants an idea turned into a spec for a coding agent, or says /idea-lab or \"Idea Lab\"."
+    ],
+    "verification": [
+      "Ending a run"
+    ]
+  },
+  {
     "name": "imagegen",
     "catalog_name": "imagegen",
     "frontmatter_name": "imagegen",
