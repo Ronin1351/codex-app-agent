@@ -393,8 +393,8 @@
     {
       "name": "set-goal",
       "source_file": "skills/set-goal/SKILL.md",
-      "line_count": 113,
-      "content_sha256": "ec8d85c02a97d375349fd0f67a08652fc16821e0e73351b7ca2d54920702d76d",
+      "line_count": 159,
+      "content_sha256": "e508834ee337f02f2f2a61b2749ccf5cf31498f4cafe4690a67db07b08d35617",
       "status": "reviewed"
     },
     {

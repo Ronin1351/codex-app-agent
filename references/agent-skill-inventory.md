@@ -713,13 +713,13 @@ Each entry below was read in full and recorded with its source hash. Extracted e
 
 ## set-goal
 - Category: core app-development
-- Purpose: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
+- Purpose: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) with milestones, a resumable progress log and a pre-flight check, so an agent can run it unattended. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
 - Source: skills/set-goal/SKILL.md (packaged; original to this repo)
-- Status: reviewed; lines=113; sha256=ec8d85c02a97d375349fd0f67a08652fc16821e0e73351b7ca2d54920702d76d
-- Triggers: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
-- Gates: Step 5 — Red-team, route, approve
-- Verification evidence: Step 5 — Red-team, route, approve
-- Artifacts mentioned: GOAL.md
+- Status: reviewed; lines=159; sha256=e508834ee337f02f2f2a61b2749ccf5cf31498f4cafe4690a67db07b08d35617
+- Triggers: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) with milestones, a resumable progress log and a pre-flight check, so an agent can run it unattended. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
+- Gates: Step 5 — Red-team and route; Step 6 — Pre-flight (before the user walks away)
+- Verification evidence: Step 6 — Pre-flight (before the user walks away)
+- Artifacts mentioned: GOAL.md; goal-status.md; review-prompt.md
 - Lifecycle situations: greenfield app; new feature; during development
 
 ## sites:sites
