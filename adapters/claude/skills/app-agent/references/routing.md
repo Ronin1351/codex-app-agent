@@ -10,6 +10,7 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 | Turn it into tracked work | `mattpocock-skills:to-spec` → `to-tickets` (needs `/setup-matt-pocock-skills` once) | `docs/specs/<name>.md` with a ticket checklist |
 | Work longer than one session | `mattpocock-skills:wayfinder` | A decision list in the spec, plus a handoff each session |
 | Find or vet a product idea before any code | `idea-lab` (ideas → evidence → jury → validation → risk gate → `SPEC.md`) | `grilling` on the idea, then `to-spec` |
+| Brief a long autonomous run (goal, quality bar, limits) | `set-goal` (writes `GOAL.md` and a goal prompt) | `grilling`, then write the 7 parts by hand |
 | Start a project from nothing | `lancer-foundation` (brief → spikes → architecture contract → walking skeleton → gate) | `grill-with-docs`, then a spec and a hand-built skeleton |
 | Long build or polish against a bar (builder + blind critic loop) | `lancer-loop` (reads `FOUNDATION.md` when present) | `tdd` per piece, with `/code-review` as the separate critic |
 | Build a feature or fix | `mattpocock-skills:tdd` | The same loop by hand: failing test, smallest change, refactor |
@@ -50,6 +51,7 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 - `/i-have-adhd` is user-invoked only. The agent follows the focus-mode rules in SKILL.md when the user asks for it.
 - **Spartan AI Toolkit** (`ai-toolkit`) overlaps the spec/plan/build/review rows above. Those rows stay primary; run a `/spartan:*` command only when the user names it, and never two workflow systems on the same task.
 - `idea-lab` runs before any code exists; its `SPEC.md` is the input to `lancer-foundation`. It stops at five owner checkpoints and never runs validation tests itself.
+- `set-goal` only writes the brief. It hands off to `lancer-foundation`, `lancer-loop` or `execution-checklist`, or to a fresh session with the goal prompt.
 - `lancer-loop` and `lancer-foundation` are for large, multi-round work. A single feature or bug still goes through the rows above. Both stop for owner approval before running and never deploy, push or spend on their own.
 - `doc-coauthoring` is for documents people will read. Code-adjacent agent docs (`AGENTS.md`, `CLAUDE.md`, skills) still follow `mattpocock-skills:writing-for-agents`.
 - `/code-review` and `/security-review` review the current diff. Run them after `<helper> risk`, so the review knows which areas carry risk.

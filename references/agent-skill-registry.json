@@ -2905,6 +2905,45 @@
     ]
   },
   {
+    "artifacts": [
+      "GOAL.md"
+    ],
+    "catalog_name": "set-goal",
+    "category": "core app-development",
+    "conflicts": [],
+    "content_sha256": "ec8d85c02a97d375349fd0f67a08652fc16821e0e73351b7ca2d54920702d76d",
+    "dependencies": [],
+    "evidence_headings": [
+      "Step 1 — Capture",
+      "Step 2 — Extract",
+      "Step 3 — Close gaps",
+      "Step 4 — Write GOAL.md",
+      "Step 5 — Red-team, route, approve",
+      "GOAL.md template"
+    ],
+    "frontmatter_name": "set-goal",
+    "gates": [
+      "Step 5 — Red-team, route, approve"
+    ],
+    "line_count": 113,
+    "name": "set-goal",
+    "prerequisites": [],
+    "purpose": "Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or \"Set Goal\".",
+    "review_status": "reviewed",
+    "situations": [
+      "greenfield app",
+      "new feature",
+      "during development"
+    ],
+    "source_file": "skills/set-goal/SKILL.md",
+    "triggers": [
+      "Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or \"Set Goal\"."
+    ],
+    "verification": [
+      "Step 5 — Red-team, route, approve"
+    ]
+  },
+  {
     "name": "sites:sites",
     "catalog_name": "sites",
     "frontmatter_name": "sites",

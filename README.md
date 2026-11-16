@@ -23,7 +23,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
    ```bash
    ./scripts/install.sh --all --project=/path/to/your/app
    ```
-   This adds the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation` and `idea-lab` skills to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
+   This adds the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation`, `idea-lab` and `set-goal` skills to Codex and copies the prompts and references into `<your app>/.codex-app-agent/`.
 2. **Tell the project about it.** Copy `.codex-app-agent/AGENTS.md.template` into your app's `AGENTS.md` (merge it if you already have one), and add your project's own rules there: how data is accessed, how releases happen, what must never be done.
 3. **Open Codex in your app and type one of these:**
 
@@ -41,6 +41,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 6. **Task checklists:** `Use $execution-checklist: compile <task brief>` builds an evidence-gated execution checklist; `Use $execution-checklist: audit <checklist>` audits one. In Claude Code the same skill is installed by the adapter and called as `/execution-checklist`.
 7. **Builder-critic agent loops:** `Use $lancer-foundation` takes a project that has nothing built yet to an approved walking skeleton (brief, risk spikes, direction, architecture contract, scaffold, gate) and writes `FOUNDATION.md`. `Use $lancer-loop` interviews you, routes to the best loop for the situation (Anchored Gauntlet, Spec Gauntlet, Tournament or Red-Team), then emits the filled prompt or runs it. It reads `FOUNDATION.md` when present. In Claude Code they are `/lancer-foundation` and `/lancer-loop`.
 8. **Ideas and specs:** `Use $idea-lab` takes a domain to 20 ideas, researches prior art and demand, scores them with an independent jury, and can carry the winner through validation and a risk gate to `SPEC.md` and `CLAUDE.md`. Hand the spec to `$lancer-foundation` to build it. In Claude Code it is `/idea-lab`.
+9. **Goal briefs:** `Use $set-goal` turns a rambling description of a project into `GOAL.md`: what and why, a pass/fail quality bar, tools, creative freedom, how each check is verified, delivery, and Green/Red autonomy limits, plus a paste-ready goal prompt for an autonomous run. In Claude Code it is `/set-goal`.
 
 ### Claude Code
 
@@ -51,7 +52,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
    ```bash
    ./adapters/claude/install.sh --plugins
    ```
-   This installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation` and `idea-lab` skills, the `app-agent-verifier` subagent, and, with `-Plugins`/`--plugins`, the bundled Claude Code plugins listed below. Then start a new Claude Code session.
+   This installs the `app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation`, `idea-lab` and `set-goal` skills, the `app-agent-verifier` subagent, and, with `-Plugins`/`--plugins`, the bundled Claude Code plugins listed below. Then start a new Claude Code session.
 2. **Optional, recommended project setup.** Run `./adapters/claude/install.ps1 -Templates -ProjectPath C:\path\to\your\app` (or `install.sh --templates --path=/path/to/your/app`). Then edit `<your app>/.claude/app-agent.json`: base branch, CI commands, and extra risk rules. Add `@AGENTS.md` to your `CLAUDE.md` so Claude reads the same project rules as Codex.
 3. **Open Claude Code in your app and type:**
 
@@ -77,6 +78,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 | `lancer-foundation` | skill | yes | yes | From-scratch foundation: brief, spikes, architecture contract, walking skeleton, gate |
 | `lancer-loop` | skill | yes | yes | Interview-driven router to builder-critic agent loops (Gauntlet, Tournament, Red-Team) |
 | `idea-lab` | skill | yes | yes | Idea generation with prior-art/demand research, independent jury scoring, validation, risk gate, and SPEC.md + CLAUDE.md |
+| `set-goal` | skill | yes | yes | Ramble → checkable 7-part goal brief (`GOAL.md`) and goal prompt for autonomous runs |
 | Spartan AI Toolkit (`ai-toolkit@spartan-marketplace`) | plugin | — | `--plugins` | `/spartan:*` workflow commands, rules, skills and agents (MIT) |
 | PlanetScale (`planetscale@planetscale`) | plugin | — | `--plugins` | PlanetScale MCP server plus MySQL/Postgres/Vitess safety skills (Apache-2.0) |
 
@@ -85,6 +87,71 @@ The plugins are listed in [`plugins/plugins.json`](plugins/plugins.json) and ins
 ### What both will and won't do
 
 They read code, run local tests and builds, and inspect git, PRs and deployments on their own. They **ask first, one action at a time,** before writing to hosted databases or services, deploying, changing secrets or settings, committing, pushing, opening or merging PRs, or installing packages. They don't claim something works without fresh command output.
+
+## Skill reference
+
+Every skill in this package: what it's for, how to call it, and where it fits. Codex calls use `$name`, Claude Code calls use `/name`. All skills install user-wide (`$CODEX_HOME/skills/` or `~/.claude/skills/`) and work in any project you open.
+
+| Skill | Use it when | Codex | Claude Code | Produces |
+|---|---|---|---|---|
+| `codex-app-agent` / `app-agent` | Day-to-day app work in a repo | `Use $codex-app-agent: <mode>` | `/app-agent <mode>` | The mode's work plus an evidence report |
+| `idea-lab` | You need an idea, or need to score and validate one | `Use $idea-lab` | `/idea-lab` | `idea-lab-runs/<date>-<domain>/`: jury scores, `SPEC.md`, `CLAUDE.md` |
+| `set-goal` | Before a long autonomous run, or when a goal is still a ramble | `Use $set-goal` | `/set-goal` | `GOAL.md` + goal prompt |
+| `lancer-foundation` | Nothing is built yet | `Use $lancer-foundation` | `/lancer-foundation` | `BRIEF.md`, `ARCHITECTURE.md`, `FOUNDATION.md`, running skeleton |
+| `lancer-loop` | Multi-round build or polish against a bar | `Use $lancer-loop` | `/lancer-loop` | `loop-prompt.md`, and `loop-status.md` when run |
+| `execution-checklist` | Handing a task to another agent, or checking a handoff | `Use $execution-checklist: compile\|audit …` | `/execution-checklist compile\|audit …` | Checklist, evidence ledger, decision register, or audit findings |
+| `doc-coauthoring` | Writing a doc people will read | `Use $doc-coauthoring: <doc>` | `/doc-coauthoring <doc>` | The finished document |
+| `app-agent-verifier` (subagent, Claude only) | Checking whether a change is really done | — | "use the app-agent-verifier" | Ready / not ready verdict |
+
+Typical order on a new project: `idea-lab` → `set-goal` → `lancer-foundation` → `lancer-loop` (or `app-agent feature:`) → `app-agent review` → `app-agent-verifier`.
+
+### `codex-app-agent` / `app-agent`
+
+- **Use case:** the operating model for app development: picks one mode per task, routes to the skills you actually have enabled, enforces approval gates, and finishes with fresh evidence.
+- **How:** `Use $codex-app-agent: start of day` / `/app-agent start of day`. Modes: start of day, feature, bug, release (Codex), migration, review, incident, end of day, weekly (Claude Code). Full tables are in **How to use it** above.
+- **Where:** inside an app repository whose `AGENTS.md` (Codex) or `CLAUDE.md` with `@AGENTS.md` (Claude Code) adopts it. Use it every working day.
+
+### `idea-lab`
+
+- **Use case:** a staged ideation pipeline for product or business ideas. Mode A (Generate): frame a domain, generate 20 ideas across 5 lenses, cull to 6, research prior art and demand with graded sources (E1–E4), then score with an independent jury. Mode B (Spec): take an idea you already have through goal and constraints, 3 concept variations, a hybrid, a jury, real-world validation tests, a risk gate (privacy, legal, safety, security), and a build brief. Mode C runs both.
+- **How:** `Use $idea-lab` / `/idea-lab`, then give a domain ("pet services in the Philippines") or an idea. It asks for domain, geography, assets, budget/timeline and idea type up front, stops for your approval at 5 checkpoints, and runs every jury in a fresh subagent (or hands you a jury prompt to run in a new session).
+- **Where:** before a project exists, in any working folder. Each run lives in `idea-lab-runs/<YYYY-MM-DD>-<domain>/` with a `ledger.md` you can resume. Step details load on demand from `references/` (rules, generate, spec, ledger template). It ends with `SPEC.md` + `CLAUDE.md`, which feed `set-goal` or `lancer-foundation`. Validation tests are designed for you to run; it never marks demand proven from interviews alone, and its risk gate is a checklist, not legal advice.
+
+### `set-goal`
+
+- **Use case:** turns a messy description of a project into a goal brief an agent can run without asking anything mid-run. The 7 parts: what and why (with a real metric), a pass/fail quality bar, tools, creative freedom, how each check is verified, delivery, and autonomy limits (Green = do it, Red = always stop: push, deploy, hosted-data writes, messages, secrets, deletes, spending).
+- **How:** `Use $set-goal` / `/set-goal`, then talk for as long as you like (voice-to-text is fine). It asks only about the gaps, at most 3 questions per round, writes `GOAL.md`, re-checks it as a cold executor would, and asks for your yes. Example: `/set-goal I want a landing page for my K9 training business that books consults`.
+- **Where:** at the start of any substantial piece of work, in the project root, before running something autonomously. It writes the brief only, then points you to `lancer-foundation`, `lancer-loop` or `execution-checklist`, or tells you to paste the goal prompt into a fresh session.
+
+### `lancer-foundation`
+
+- **Use case:** takes a project that has nothing built yet to an approved, running anchor: brief, scope cut, risk spikes, direction, architecture contract, scaffold, quality harness, walking skeleton, backlog, then a gate.
+- **How:** `Use $lancer-foundation` / `/lancer-foundation`. It stops at three checkpoints (brief, architecture contract, gate) for your approval. Feed it `GOAL.md` when you have one.
+- **Where:** in an empty or near-empty repository, once per project, before any loop or feature work.
+
+### `lancer-loop`
+
+- **Use case:** interviews you, then deterministically picks and fills the right builder-critic loop: Anchored Gauntlet, Spec Gauntlet, Tournament, Red-Team, or a chain of them.
+- **How:** `Use $lancer-loop` / `/lancer-loop`. Answer the interview, approve the route, then choose "emit prompt" or "run now". It reads `FOUNDATION.md` when present.
+- **Where:** large, multi-round build or polish work against a clear bar. A single feature or bug goes through `app-agent` instead.
+
+### `execution-checklist`
+
+- **Use case:** an execution contract with evidence gates: what may change, what must stay true, order of work, what proves success, and where the executor's authority ends.
+- **How:** `Use $execution-checklist: compile <task brief or GOAL.md>` or `… audit <checklist>`. In Claude Code: `/execution-checklist compile …`.
+- **Where:** whenever work crosses agents (Claude → Codex, lead → subagent), or when you want to audit a handoff before trusting it.
+
+### `doc-coauthoring`
+
+- **Use case:** a three-stage workflow for documents people will read (specs, proposals, PRDs, decision docs, RFCs): context gathering, section-by-section drafting, then a fresh-reader test.
+- **How:** `Use $doc-coauthoring: <what you are writing>` / `/doc-coauthoring <what you are writing>`.
+- **Where:** human-facing documents. Agent-facing files (`AGENTS.md`, `CLAUDE.md`, skills) follow `mattpocock-skills:writing-for-agents` instead. Vendored from Anthropic under Apache-2.0 (see `THIRD_PARTY_NOTICES.md`).
+
+### `app-agent-verifier` (Claude Code subagent)
+
+- **Use case:** a separate-context, read-only "is it done?" pass: risk checks, CI, a defect review, and a ready / not ready verdict.
+- **How:** say "use the app-agent-verifier" in Claude Code.
+- **Where:** after `/app-agent review` or before you approve a commit or PR. Installed to `~/.claude/agents/` by the Claude adapter.
 
 ## Quick start
 
@@ -112,7 +179,7 @@ Install the complete Codex bundle into the user skill directory:
 ./scripts/install.sh --all
 ```
 
-The complete installation includes the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation` and `idea-lab` skills and copies the reusable references and prompts into the selected project. It does not install dependencies, change application source code, deploy, commit, push, or alter hosted services.
+The complete installation includes the `codex-app-agent`, `execution-checklist`, `doc-coauthoring`, `lancer-loop`, `lancer-foundation`, `idea-lab` and `set-goal` skills and copies the reusable references and prompts into the selected project. It does not install dependencies, change application source code, deploy, commit, push, or alter hosted services.
 
 ## Project setup
 

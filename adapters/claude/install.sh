@@ -37,8 +37,8 @@ echo "Installed skill:    $ROOT/skills/execution-checklist"
 mkdir -p "$ROOT/skills/doc-coauthoring"
 cp "$ADAPTER/../../skills/doc-coauthoring/SKILL.md" "$ROOT/skills/doc-coauthoring/"
 echo "Installed skill:    $ROOT/skills/doc-coauthoring"
-# Shared skills: Lancer Loop + Lancer Foundation (agents/ is Codex-only metadata).
-for LANCER in lancer-loop lancer-foundation; do
+# Shared skills: Lancer Loop, Lancer Foundation, Set Goal (agents/ is Codex-only metadata).
+for LANCER in lancer-loop lancer-foundation set-goal; do
   mkdir -p "$ROOT/skills/$LANCER"
   cp "$ADAPTER/../../skills/$LANCER/SKILL.md" "$ROOT/skills/$LANCER/"
   echo "Installed skill:    $ROOT/skills/$LANCER"
