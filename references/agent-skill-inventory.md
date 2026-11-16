@@ -1,6 +1,6 @@
 # Agent Skill Inventory
 
-Verified catalog skills: 113
+Verified catalog skills: 116
 
 Each entry below was read in full and recorded with its source hash. Extracted evidence is intentionally concise; the source skill remains authoritative.
 
@@ -311,6 +311,19 @@ Each entry below was read in full and recorded with its source hash. Extracted e
 - Verification evidence: Part C - Merge AST + semantic into final extraction; GRAPH_REPORT.md / analysis sidecar. Check immediately after build (#1392).; Step 4.5 - Graph health check (read-only integrity gate)
 - Artifacts mentioned: GRAPH_REPORT.md; index.md; graphify-out/graph.json; references/github-and-merge.md; graphify-out/.graphify_detect.json; references/transcribe.md; graphify-out/.graphify_ast.json; .graphify_semantic.json; graphify-out/.graphify_semantic.json; references/extraction-spec.md; SKILL.md; .graphify_cached.json; graphify-out/.graphify_cached.json; .codex/config.toml; graphify-out/.graphify_chunk_NN.json; graphify-out/.graphify_semantic_new.json; .graphify_semantic_new.json; graphify-out/.graphify_extract.json; graph.json; graphify-out/GRAPH_REPORT.md; graphify-out/.graphify_analysis.json; graphify-out/.graphify_labels.json; references/exports.md; .graphify_labels.json; graphify-out/cost.json; graph.html; references/update.md; references/query.md; references/add-watch.md; CLAUDE.md
 - Lifecycle situations: during development
+
+## idea-lab
+- Category: core app-development
+- Purpose: Generates evidence-backed product or business ideas, scores them with an independent jury, and turns the winner into a validated build spec (SPEC.md + CLAUDE.md). Use when the user wants new ideas in a domain, wants an idea scored, validated or risk-checked, wants an idea turned into a spec for a coding agent, or says /idea-lab or "Idea Lab".
+- Source: skills/idea-lab/SKILL.md (packaged; original to this repo)
+- Status: reviewed; lines=63; sha256=06be96ef76472b86ce638cc42834806de1691db414983ff07a6ec29362625b37
+- Triggers: Generates evidence-backed product or business ideas, scores them with an independent jury, and turns the winner into a validated build spec (SPEC.md + CLAUDE.md). Use when the user wants new ideas in a domain, wants an idea scored, validated or risk-checked, wants an idea turned into a spec for a coding agent, or says /idea-lab or "Idea Lab".
+- Prerequisites/evidence:
+- Dependencies/references: references/rules.md; references/generate.md; references/spec.md; references/ledger-template.md
+- Gates: User checkpoints (stop and ask; never decide these yourself); Execution rules
+- Verification evidence: Ending a run (S8 self-check)
+- Artifacts mentioned: ledger.md; G1-frame.md; G2-ideas.md; G3-shortlist.md; G4-evidence.md; G5-jury.md; S0-evidence.md; S4-jury-run<n>.md; SPEC.md; CLAUDE.md
+- Lifecycle situations: product idea discovery; greenfield app; new feature
 
 ## imagegen
 - Category: specialized or usually unrelated

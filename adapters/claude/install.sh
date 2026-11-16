@@ -43,6 +43,11 @@ for LANCER in lancer-loop lancer-foundation; do
   cp "$ADAPTER/../../skills/$LANCER/SKILL.md" "$ROOT/skills/$LANCER/"
   echo "Installed skill:    $ROOT/skills/$LANCER"
 done
+# Shared skill: Idea Lab (SKILL.md + references/; agents/ is Codex-only metadata).
+mkdir -p "$ROOT/skills/idea-lab/references"
+cp "$ADAPTER/../../skills/idea-lab/SKILL.md" "$ROOT/skills/idea-lab/"
+cp "$ADAPTER/../../skills/idea-lab/references/"*.md "$ROOT/skills/idea-lab/references/"
+echo "Installed skill:    $ROOT/skills/idea-lab"
 echo "Installed subagent: $ROOT/agents/app-agent-verifier.md"
 
 if $TEMPLATES; then

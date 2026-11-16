@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-10-23T23:06:06.1263355Z",
-  "catalog_skill_count": 115,
-  "reviewed_count": 115,
+  "catalog_skill_count": 116,
+  "reviewed_count": 116,
   "missing_count": 0,
   "unreadable_count": 0,
   "records": [
@@ -171,6 +171,13 @@
       "source_file": "catalog://reviewed-skill",
       "line_count": 795,
       "content_sha256": "e1150326f0ed06db45e735ecb92b9d3048c9d165d61f61c5ecc728758a9c21f2",
+      "status": "reviewed"
+    },
+    {
+      "name": "idea-lab",
+      "source_file": "skills/idea-lab/SKILL.md",
+      "line_count": 63,
+      "content_sha256": "06be96ef76472b86ce638cc42834806de1691db414983ff07a6ec29362625b37",
       "status": "reviewed"
     },
     {

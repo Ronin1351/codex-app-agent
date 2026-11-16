@@ -10,6 +10,7 @@ The Claude Code adapter for this package. It runs the same operating model as th
 | Project config | `<project>/.claude/app-agent.json` | The project's base branch, CI commands, handoff folder and extra risk rules. Optional. |
 | Skills `execution-checklist`, `doc-coauthoring` | `~/.claude/skills/` | Shared with the Codex package: evidence-gated checklists, and three-stage document co-authoring (`/doc-coauthoring`). |
 | Skills `lancer-foundation`, `lancer-loop` | `~/.claude/skills/` | Shared with the Codex package: `/lancer-foundation` builds an approved foundation for a from-scratch project; `/lancer-loop` interviews you and routes to a builder-critic agent loop. |
+| Skill `idea-lab` | `~/.claude/skills/idea-lab/` | Shared with the Codex package: `/idea-lab` generates and researches ideas, scores them with a jury subagent, and turns the winner into `SPEC.md` + `CLAUDE.md`. |
 | Plugins (with `--plugins`) | Claude Code plugin store | Spartan AI Toolkit (`/spartan:*`) and PlanetScale (MCP + database skills), from [`plugins/plugins.json`](../../plugins/plugins.json). |
 
 ## Requirements
