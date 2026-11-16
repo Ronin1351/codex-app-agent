@@ -41,7 +41,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 6. **Task checklists:** `Use $execution-checklist: compile <task brief>` builds an evidence-gated execution checklist; `Use $execution-checklist: audit <checklist>` audits one. In Claude Code the same skill is installed by the adapter and called as `/execution-checklist`.
 7. **Builder-critic agent loops:** `Use $lancer-foundation` takes a project that has nothing built yet to an approved walking skeleton (brief, risk spikes, direction, architecture contract, scaffold, gate) and writes `FOUNDATION.md`. `Use $lancer-loop` interviews you, routes to the best loop for the situation (Anchored Gauntlet, Spec Gauntlet, Tournament or Red-Team), then emits the filled prompt or runs it. It reads `FOUNDATION.md` when present. In Claude Code they are `/lancer-foundation` and `/lancer-loop`.
 8. **Ideas and specs:** `Use $idea-lab` takes a domain to 20 ideas, researches prior art and demand, scores them with an independent jury, and can carry the winner through validation and a risk gate to `SPEC.md` and `CLAUDE.md`. Hand the spec to `$lancer-foundation` to build it. In Claude Code it is `/idea-lab`.
-9. **Goal briefs:** `Use $set-goal` turns a rambling description of a project into `GOAL.md`: what and why, a pass/fail quality bar, tools, creative freedom, how each check is verified, delivery, and Green/Red autonomy limits, plus a paste-ready goal prompt for an autonomous run. In Claude Code it is `/set-goal`.
+9. **Goal briefs:** `Use $set-goal` turns a rambling description of a project into `GOAL.md` for an unattended run: what and why, a locked pass/fail quality bar, tools, creative freedom, how each check is verified, milestones, and Green/Pre-approved/Red limits with hour and spend caps. It also writes a resumable `goal-status.md` and runs a pre-flight (permissions, dependencies, rule clashes, dry run) before you walk away. In Claude Code it is `/set-goal`.
 
 ### Claude Code
 
@@ -78,7 +78,7 @@ Both versions follow the same playbook: pick a mode (start of day, feature, bug,
 | `lancer-foundation` | skill | yes | yes | From-scratch foundation: brief, spikes, architecture contract, walking skeleton, gate |
 | `lancer-loop` | skill | yes | yes | Interview-driven router to builder-critic agent loops (Gauntlet, Tournament, Red-Team) |
 | `idea-lab` | skill | yes | yes | Idea generation with prior-art/demand research, independent jury scoring, validation, risk gate, and SPEC.md + CLAUDE.md |
-| `set-goal` | skill | yes | yes | Ramble → checkable 7-part goal brief (`GOAL.md`) and goal prompt for autonomous runs |
+| `set-goal` | skill | yes | yes | Ramble → checkable 7-part goal brief with milestones, resumable progress log and pre-flight, for unattended runs |
 | Spartan AI Toolkit (`ai-toolkit@spartan-marketplace`) | plugin | — | `--plugins` | `/spartan:*` workflow commands, rules, skills and agents (MIT) |
 | PlanetScale (`planetscale@planetscale`) | plugin | — | `--plugins` | PlanetScale MCP server plus MySQL/Postgres/Vitess safety skills (Apache-2.0) |
 
@@ -96,7 +96,7 @@ Every skill in this package: what it's for, how to call it, and where it fits. C
 |---|---|---|---|---|
 | `codex-app-agent` / `app-agent` | Day-to-day app work in a repo | `Use $codex-app-agent: <mode>` | `/app-agent <mode>` | The mode's work plus an evidence report |
 | `idea-lab` | You need an idea, or need to score and validate one | `Use $idea-lab` | `/idea-lab` | `idea-lab-runs/<date>-<domain>/`: jury scores, `SPEC.md`, `CLAUDE.md` |
-| `set-goal` | Before a long autonomous run, or when a goal is still a ramble | `Use $set-goal` | `/set-goal` | `GOAL.md` + goal prompt |
+| `set-goal` | Before a long autonomous run, or when a goal is still a ramble | `Use $set-goal` | `/set-goal` | `GOAL.md`, `goal-status.md`, goal prompt |
 | `lancer-foundation` | Nothing is built yet | `Use $lancer-foundation` | `/lancer-foundation` | `BRIEF.md`, `ARCHITECTURE.md`, `FOUNDATION.md`, running skeleton |
 | `lancer-loop` | Multi-round build or polish against a bar | `Use $lancer-loop` | `/lancer-loop` | `loop-prompt.md`, and `loop-status.md` when run |
 | `execution-checklist` | Handing a task to another agent, or checking a handoff | `Use $execution-checklist: compile\|audit …` | `/execution-checklist compile\|audit …` | Checklist, evidence ledger, decision register, or audit findings |
@@ -119,9 +119,10 @@ Typical order on a new project: `idea-lab` → `set-goal` → `lancer-foundation
 
 ### `set-goal`
 
-- **Use case:** turns a messy description of a project into a goal brief an agent can run without asking anything mid-run. The 7 parts: what and why (with a real metric), a pass/fail quality bar, tools, creative freedom, how each check is verified, delivery, and autonomy limits (Green = do it, Red = always stop: push, deploy, hosted-data writes, messages, secrets, deletes, spending).
-- **How:** `Use $set-goal` / `/set-goal`, then talk for as long as you like (voice-to-text is fine). It asks only about the gaps, at most 3 questions per round, writes `GOAL.md`, re-checks it as a cold executor would, and asks for your yes. Example: `/set-goal I want a landing page for my K9 training business that books consults`.
-- **Where:** at the start of any substantial piece of work, in the project root, before running something autonomously. It writes the brief only, then points you to `lancer-foundation`, `lancer-loop` or `execution-checklist`, or tells you to paste the goal prompt into a fresh session.
+- **Use case:** turns a messy description of a project into a goal brief an agent can run unattended. The 7 parts: what and why (with a real metric), a locked pass/fail quality bar, tools, creative freedom, how each check is verified, delivery split into milestones, and autonomy: Green (just do it), Pre-approved (normally gated, cleared for this run), Red (always stop: push/merge to base, deploy, hosted-data writes, messages, secrets, spending over the limit), plus hour and spend limits.
+- **How:** `Use $set-goal` / `/set-goal`, then talk for as long as you like (voice-to-text is fine). It asks only about the gaps (at most 3 questions per round), proposes the milestone split, writes `GOAL.md` and `goal-status.md`, rereads them as a cold executor would, and asks for your yes. Then it runs a **pre-flight** with you: permissions set so the run never waits on a prompt, dependencies installed, clashes with `AGENTS.md`/`CLAUDE.md` resolved, and milestone-1 checks dry-run. Example: `/set-goal I want a landing page for my K9 training business that books consults`.
+- **Where:** in the project root, at the start of any substantial piece of work you want to run without supervision. Paste the goal prompt into a fresh session and leave. The executor works one milestone at a time, logs progress in `goal-status.md`, parks a blocked step and moves on to independent milestones, and ends with a fresh-context review.
+- **Limits:** it writes the brief but doesn't run or watch the run. If the session dies (crash, sleep, usage limit), paste the same goal prompt into a new session and it resumes from `goal-status.md`. Keep the computer awake and online.
 
 ### `lancer-foundation`
 

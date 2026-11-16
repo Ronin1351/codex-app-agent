@@ -51,7 +51,7 @@ Project instructions (`CLAUDE.md`, `AGENTS.md`) outrank every skill below. When 
 - `/i-have-adhd` is user-invoked only. The agent follows the focus-mode rules in SKILL.md when the user asks for it.
 - **Spartan AI Toolkit** (`ai-toolkit`) overlaps the spec/plan/build/review rows above. Those rows stay primary; run a `/spartan:*` command only when the user names it, and never two workflow systems on the same task.
 - `idea-lab` runs before any code exists; its `SPEC.md` is the input to `lancer-foundation`. It stops at five owner checkpoints and never runs validation tests itself.
-- `set-goal` only writes the brief. It hands off to `lancer-foundation`, `lancer-loop` or `execution-checklist`, or to a fresh session with the goal prompt.
+- `set-goal` writes the brief and runs the pre-flight; it never executes the goal. It hands off to `lancer-foundation`, `lancer-loop` or `execution-checklist`, or to a fresh session with the goal prompt.
 - `lancer-loop` and `lancer-foundation` are for large, multi-round work. A single feature or bug still goes through the rows above. Both stop for owner approval before running and never deploy, push or spend on their own.
 - `doc-coauthoring` is for documents people will read. Code-adjacent agent docs (`AGENTS.md`, `CLAUDE.md`, skills) still follow `mattpocock-skills:writing-for-agents`.
 - `/code-review` and `/security-review` review the current diff. Run them after `<helper> risk`, so the review knows which areas carry risk.
