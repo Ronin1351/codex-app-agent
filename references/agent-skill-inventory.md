@@ -1,6 +1,6 @@
 # Agent Skill Inventory
 
-Verified catalog skills: 116
+Verified catalog skills: 117
 
 Each entry below was read in full and recorded with its source hash. Extracted evidence is intentionally concise; the source skill remains authoritative.
 
@@ -710,6 +710,17 @@ Each entry below was read in full and recorded with its source hash. Extracted e
 - Verification evidence:
 - Artifacts mentioned: references/connection-and-recovery.md; mcp.json; github.com/morluto/rea/blob/main/docs/firmware-analysis.md; references/native-and-artifacts.md; references/runtime-observation.md; github.com/morluto/rea/blob/main/docs/web-network-captures.md; github.com/morluto/rea/blob/main/docs/packet-captures.md; github.com/morluto/rea/blob/main/docs/pcap-analysis.md; github.com/morluto/rea/blob/main/docs/signal-recordings.md; github.com/morluto/rea/blob/main/docs/wasm-artifacts.md; github.com/morluto/rea/blob/main/docs/evm-bytecode.md; github.com/morluto/rea/blob/main/docs/go-binaries.md; github.com/morluto/rea/blob/main/docs/rust-binaries.md; github.com/morluto/rea/blob/main/docs/sqlite-databases.md; github.com/morluto/rea/blob/main/docs/binary-diagnostics.md; github.com/morluto/rea/blob/main/docs/recorded-crashes.md; github.com/morluto/rea/blob/main/docs/ida-provider.md; github.com/morluto/rea/blob/main/docs/kuna-provider.md; references/javascript-applications.md; references/android-applications.md; references/evidence-workflows.md
 - Lifecycle situations: during development
+
+## set-goal
+- Category: core app-development
+- Purpose: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
+- Source: skills/set-goal/SKILL.md (packaged; original to this repo)
+- Status: reviewed; lines=113; sha256=ec8d85c02a97d375349fd0f67a08652fc16821e0e73351b7ca2d54920702d76d
+- Triggers: Turns a rambling project idea into a 7-part goal brief (what and why, quality bar, tools, creative freedom, checks, delivery, autonomy) plus a paste-ready goal prompt, saved as GOAL.md. Use before a long autonomous agent run, when the user wants to set or sharpen a goal, or says /set-goal or "Set Goal".
+- Gates: Step 5 — Red-team, route, approve
+- Verification evidence: Step 5 — Red-team, route, approve
+- Artifacts mentioned: GOAL.md
+- Lifecycle situations: greenfield app; new feature; during development
 
 ## sites:sites
 - Category: frontend/UI

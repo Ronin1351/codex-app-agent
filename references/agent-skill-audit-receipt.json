@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-10-23T23:06:06.1263355Z",
-  "catalog_skill_count": 116,
-  "reviewed_count": 116,
+  "catalog_skill_count": 117,
+  "reviewed_count": 117,
   "missing_count": 0,
   "unreadable_count": 0,
   "records": [
@@ -388,6 +388,13 @@
       "source_file": "catalog://reviewed-skill",
       "line_count": 357,
       "content_sha256": "fbcd39d6abe803cf7aa49c1880815bc8e22ba2af87a23681944f687bb7629eb1",
+      "status": "reviewed"
+    },
+    {
+      "name": "set-goal",
+      "source_file": "skills/set-goal/SKILL.md",
+      "line_count": 113,
+      "content_sha256": "ec8d85c02a97d375349fd0f67a08652fc16821e0e73351b7ca2d54920702d76d",
       "status": "reviewed"
     },
     {

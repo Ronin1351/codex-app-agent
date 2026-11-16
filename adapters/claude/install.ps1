@@ -32,8 +32,8 @@ New-Item -ItemType Directory -Path $docDest -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path (Split-Path -Parent (Split-Path -Parent $adapter)) 'skills\doc-coauthoring\SKILL.md') -Destination $docDest -Force
 Write-Host "Installed skill:    $docDest"
 
-# Shared skills: Lancer Loop + Lancer Foundation (agents\ is Codex-only metadata).
-foreach ($lancer in 'lancer-loop', 'lancer-foundation') {
+# Shared skills: Lancer Loop, Lancer Foundation, Set Goal (agents\ is Codex-only metadata).
+foreach ($lancer in 'lancer-loop', 'lancer-foundation', 'set-goal') {
   $lancerDest = Join-Path $root "skills\$lancer"
   New-Item -ItemType Directory -Path $lancerDest -Force | Out-Null
   Copy-Item -LiteralPath (Join-Path (Split-Path -Parent (Split-Path -Parent $adapter)) "skills\$lancer\SKILL.md") -Destination $lancerDest -Force

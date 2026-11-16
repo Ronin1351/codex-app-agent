@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set Goal"
+  short_description: "Turn a ramble into a checkable 7-part goal brief"
+  default_prompt: "Use $set-goal to turn what I tell you about this project into GOAL.md: what and why, a pass/fail quality bar, tools, creative freedom, how each check is verified, delivery, and Green/Red autonomy limits, plus a paste-ready goal prompt."
